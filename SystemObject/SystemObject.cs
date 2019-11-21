@@ -51,10 +51,8 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 
             Console.WriteLine(mk1.Equals(mk2));
             Console.WriteLine(mk1.Equals(mk3));
-            Console.WriteLine("-------------------");
             Console.WriteLine(mk2.Equals(mk1));
             Console.WriteLine(mk2.Equals(mk3));
-            Console.WriteLine("-------------------");
             Console.WriteLine(mk3.Equals(mk1));
             Console.WriteLine(mk3.Equals(mk2));
         }
