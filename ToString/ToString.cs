@@ -14,7 +14,49 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         public double Imaginarni;
 
         // TODO:010 Nadglasati (override) metodu ToString tako da vraća niz u obliku: "2+3j", "2-j", "0", "j", "-j".
+        public override string ToString()
+        {
+            //return base.ToString(); ako ovako ostavimo dobijemo isto
+            if (Realni < 0 && Imaginarni < 0)
+                return Realni + "" + Imaginarni + "j";
 
+            else if (Realni > 0 && Imaginarni < 0)
+                return Realni + "" + Imaginarni + "j";
+
+            else if (Imaginarni == 0)
+                return Realni + "";
+
+            else if (Realni == 0 &&Imaginarni==1) {
+            
+                     return "j";
+        }
+            else if (Realni == 0 && Imaginarni == -1)
+            {
+
+                return "-j";
+            }
+            else if (Realni == 0 && Imaginarni <0)
+            {
+
+                return Imaginarni+"j";
+            }
+
+            else if (Realni == 0 && Imaginarni == 0)
+                return "";
+
+            else
+                return Realni + "+" + Imaginarni + "j"; 
+            /*nakon unosa overrida:
+                2+3j
+                2+-3j
+                0+-3j
+                0+0j
+                0+1j
+                0+-1j
+                -2+0j
+            GOTOVO!!!*/
+            
+        }
     }
 
     class ToString
@@ -42,6 +84,18 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             kb.Imaginarni = 0;
             kb.Realni = -2;
             Console.WriteLine(kb); // "-2"
+            /*bez overrida:
+             * po defaultu puno ime klase zajedno sa namespace-om
+             * 
+                Vsite.CSharp.ZajednickaSvojstvaTipova.KompleksniBroj
+                Vsite.CSharp.ZajednickaSvojstvaTipova.KompleksniBroj
+                Vsite.CSharp.ZajednickaSvojstvaTipova.KompleksniBroj
+                Vsite.CSharp.ZajednickaSvojstvaTipova.KompleksniBroj
+                Vsite.CSharp.ZajednickaSvojstvaTipova.KompleksniBroj
+                Vsite.CSharp.ZajednickaSvojstvaTipova.KompleksniBroj
+                Vsite.CSharp.ZajednickaSvojstvaTipova.KompleksniBroj
+                GOTOVO!!!
+             */
 
             Console.WriteLine("GOTOVO!!!");
             Console.ReadKey();
