@@ -33,6 +33,20 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             return Equals(obj as Osoba);
         }
 
+        //Rješenje - JednakostZaReferentniTip
+        public static bool operator ==(Osoba os1, Osoba os2)
+        {
+            if (((object)os1) == null || ((object)os2) == null)
+                return Object.Equals(os1, os2);
+            return os1.Equals(os2);
+        }
+
+        public static bool operator !=(Osoba os1, Osoba os2)
+        {
+            if (((object)os1) == null || ((object)os2) == null)
+                return !Object.Equals(os1, os2);
+            return !(os1 == os2);
+        }
 
         public override string ToString()
         {
