@@ -38,6 +38,26 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             {
                 return string.Format("'{0}, {1}'", m_ime, m_matičniBroj);
             }
+
+            public static bool operator ==(Osoba os1, Osoba os2)
+            {
+                if ((object)os1 == null)
+                    return false;
+                if (os1.m_ime == os2.m_ime && os1.m_matičniBroj == os2.m_matičniBroj)
+                    return true;
+                return false;
+            }
+
+            public static bool operator !=(Osoba os1, Osoba os2)
+            {
+                if ((object)os1 == null)
+                    return false;
+                if (os1.m_ime == os2.m_ime && os1.m_matičniBroj == os2.m_matičniBroj)
+                    return false;
+                return true;
+            }
+
+
         }
 
         public static void UsporedbaOsoba(Osoba osobaA, Osoba osobaB)
