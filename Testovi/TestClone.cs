@@ -10,9 +10,9 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova.Testovi
         public void Clone_VraćaNoviObjektSIstimSadržajem()
         {
             Clone.Jednakost();
-            Assert.IsTrue(cw.GetString().EndsWith("false"));
-            Assert.IsTrue(cw.GetString().EndsWith("true"));
-            Assert.IsTrue(cw.GetString().EndsWith("false"));
+            Assert.IsTrue(cw.GetString().EndsWith("False"));
+            Assert.IsTrue(cw.GetString().EndsWith("True"));
+            Assert.IsTrue(cw.GetString().EndsWith("False"));
         }
     }
 }

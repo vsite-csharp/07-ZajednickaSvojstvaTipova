@@ -4,8 +4,13 @@ using System.Diagnostics;
 namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     // TODO:030 Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
-    public class Osoba : IEquatable<Osoba>
+    public class Osoba : IEquatable<Osoba>, ICloneable
     {
+        public object Clone()
+        {
+            return MemberwiseClone();
+        }
+
         public Osoba(string ime, int matičniBroj)
         {
             m_ime = ime;
