@@ -48,6 +48,12 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             return !(os1 == os2);
         }
 
+        //Rješenje - GetHashCode
+        public override int GetHashCode()
+        {
+            return m_ime.GetHashCode() ^ m_matičniBroj.GetHashCode();
+        }
+
         public override string ToString()
         {
             return string.Format("'{0}, {1}'", m_ime, m_matičniBroj);
