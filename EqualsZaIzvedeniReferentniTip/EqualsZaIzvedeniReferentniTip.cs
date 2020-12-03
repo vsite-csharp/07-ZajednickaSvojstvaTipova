@@ -4,7 +4,7 @@ using System.Diagnostics;
 namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     // TODO:041 Definirati da klasa Student implementira sučelje IEquatable<Student>
-    class Student : Osoba
+    class Student : Osoba, IEquatable<Student>
     {
         public Student(string ime, int matičniBroj, string smjer, int godina) : base(ime, matičniBroj)
         {
@@ -16,10 +16,20 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         int godina;
 
         // TODO:042 Implementirati metodu Equals(Student) iz sučelja IEquatable<Student> da uključi dodatne usporedbe da bi studenti bili jednaki samo ako su na istom smjeru i godini.
-
+        public bool Equals(Student other)
+        {
+            if (base.Equals(other) == false)
+                return false;
+            if (ReferenceEquals(this, other))
+                return true;
+            return smjer == other.smjer && godina == other.godina;
+        }
 
         // TODO:043 Nadglasati (override) metodu Equals(object) tako da poziva metodu Equals(Student).
-
+        public override bool Equals(object obj)
+        {
+            return Equals(obj as Student);
+        }
 
         public override string ToString()
         {
