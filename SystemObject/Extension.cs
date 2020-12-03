@@ -10,8 +10,8 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
     {
         public static void IspisNaslova(string naslov)
         {
-            System.Console.WriteLine(new string('*', naslov.Length));
-            System.Console.WriteLine(naslov);
+            Console.WriteLine(new string('*', naslov.Length));
+            Console.WriteLine(naslov);
         }
     }
 }
