@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
-    // TODO:061 U klasi Osoba iz projekta MetodaEqualsZaReferentiTip definirati operatore == i != tako da donji primjeri daju očekivane rezultate.
+    // U klasi Osoba iz projekta MetodaEqualsZaReferentiTip definirati operatore == i != tako da donji primjeri daju očekivane rezultate.
 
     class JednakostZaReferentniTip
     {
@@ -13,7 +13,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             Console.WriteLine(string.Format("{0} != {1}: {2}", osobaA, osobaB, osobaA != osobaB));
         }
 
-        // TODO:060 Pokrenuti program i pogledati ispise.
+        //  Pokrenuti program i pogledati ispise.
         static void Main(string[] args)
         {
             Osoba osobaA = new Osoba("Janko", 1);
