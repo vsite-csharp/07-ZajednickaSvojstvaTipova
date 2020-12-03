@@ -32,6 +32,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         public override string ToString()
         {
             //return Equals(obj as Student);
+            //return Equals(obj as Student);
             return $"{base.ToString()} ({smjer} {godina}.godina)";
         }
 
