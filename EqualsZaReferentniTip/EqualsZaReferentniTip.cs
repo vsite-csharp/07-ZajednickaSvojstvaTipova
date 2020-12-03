@@ -34,6 +34,11 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             return Equals(obj as Osoba);
         }
 
+        public override int GetHashCode()
+        {
+            return GetHashCode();
+        }
+
 
         public override string ToString()
         {
