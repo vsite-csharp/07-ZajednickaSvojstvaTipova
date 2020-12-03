@@ -31,6 +31,10 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
                 return true;
             return ime == other.ime && matičniBroj == other.matičniBroj;
         }
+        public override int GetHashCode()
+        {
+            return ime.GetHashCode() ^ matičniBroj.GetHashCode();
+        }
 
         // Nadglasati (override) metodu Equals(object) tako da poziva Equals(Osoba)
         public override bool Equals(object obj)
