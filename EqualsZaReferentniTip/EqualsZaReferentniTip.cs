@@ -4,7 +4,7 @@ using System.Diagnostics;
 namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     // Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
-    public class Osoba
+    public class Osoba: IEquatable<Osoba>
     {
         public Osoba(string ime, int matičniBroj)
         {
@@ -20,7 +20,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         {
             if (other == null)
                 return false;
-            if (typeof(Osoba) != other.GetType())
+            if (GetType() != other.GetType())
                 return false;
             if (Osoba.ReferenceEquals(this, other))
                 return true;
@@ -41,6 +41,16 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         public void PromijeniIme(string novoIme)
         {
             ime = novoIme;
+        }
+
+        public static bool operator ==(Osoba a, Osoba b)
+        {
+            return Osoba.Equals(a, b);
+        }
+
+        public static bool operator !=(Osoba a, Osoba b)
+        {
+            return !(a == b);
         }
     }
 
