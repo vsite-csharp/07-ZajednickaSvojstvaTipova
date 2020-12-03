@@ -21,6 +21,13 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova.Testovi
         }
 
         [TestMethod]
+        public void VraćaTekstZaKompleksniBrojSRealnimBrojemINegativnomImaginarnomJedinicom()
+        {
+            KompleksniBroj kb = new KompleksniBroj(2, -1);
+            Assert.AreEqual("2-j", kb.ToString());
+        }
+
+        [TestMethod]
         public void VraćaTekstZaKompleksniBrojSamoSNegativnimImaginarnimDijelom()
         {
             KompleksniBroj kb = new KompleksniBroj(0, -3);
@@ -35,10 +42,24 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova.Testovi
         }
 
         [TestMethod]
+        public void VraćaTekstZaNegativnuImaginarnuJedinicu()
+        {
+            KompleksniBroj kb = new KompleksniBroj(0, -1);
+            Assert.AreEqual("-j", kb.ToString());
+        }
+
+        [TestMethod]
         public void VraćaTekstZaNulu()
         {
             KompleksniBroj kb = new KompleksniBroj(0, 0);
             Assert.AreEqual("0", kb.ToString());
+        }
+
+        [TestMethod]
+        public void VraćaTekstZaBrojSamoSPozitivnimRealnimDijelom()
+        {
+            KompleksniBroj kb = new KompleksniBroj(2, 0);
+            Assert.AreEqual("2", kb.ToString());
         }
 
         [TestMethod]
