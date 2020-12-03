@@ -18,7 +18,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         public bool Equals(Osoba other)
         {
             if(other == null)return false;
-            if (typeof(Osoba) != other.GetType()) return false;
+            if (GetType() != other.GetType()) return false;
             if (Osoba.ReferenceEquals(this, other)) return true;
             return ime == other.ime && matičniBroj == other.matičniBroj;
         }
