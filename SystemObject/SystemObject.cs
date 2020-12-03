@@ -18,9 +18,9 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             MojaKlasa mk3 = new MojaKlasa();
 
             // Za svaki objekt (mk1, mk2, mk3) pozvati njegovu metodu ToString i ispisati na konzolu ono što ona vraća.
-            Console.Write(mk1.ToString());
-            Console.Write(mk2.ToString());
-            Console.Write(mk3);
+            Console.WriteLine(mk1.ToString());
+            Console.WriteLine(mk2.ToString());
+            Console.WriteLine(mk3);
         }
 
         public static void IspisGetType()
