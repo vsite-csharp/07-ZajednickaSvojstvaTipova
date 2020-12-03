@@ -37,6 +37,10 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
                 ime = novoIme;
             }
 
+            public bool Equals(Osoba other)
+            {
+                throw new NotImplementedException();
+            }
         }
 
         public static void UsporedbaOsoba(Osoba osobaA, Osoba osobaB)
