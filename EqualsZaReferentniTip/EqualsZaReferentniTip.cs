@@ -33,6 +33,11 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             return Equals(obj as Osoba);
         }
 
+        public override int GetHashCode()
+        {
+            return ime.GetHashCode() ^ matičniBroj.GetHashCode();
+        }
+
         public override string ToString()
         {
             return $"'{ime}, {matičniBroj}'";
@@ -43,7 +48,14 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             ime = novoIme;
         }
 
-
+        public static bool operator ==(Osoba a, Osoba b)
+        {
+            return Equals(a, b);
+        }
+        public static bool operator !=(Osoba a, Osoba b)
+        {
+            return !(a==b);
+        }
     }
 
     class EqualsZaReferentniTip
