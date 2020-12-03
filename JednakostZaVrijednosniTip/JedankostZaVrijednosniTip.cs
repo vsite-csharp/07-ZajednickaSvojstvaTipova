@@ -11,7 +11,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             // TODO:070 Otkomentirati donje naredbe i provjeriti može li se kod prevesti i izvesti.
             //Console.WriteLine($"{osobaA} == {osobaB}: {osobaA == osobaB}");
             //Console.WriteLine($"{osobaA} != {osobaB}: {osobaA != osobaB}");
-
+            
             // TODO:071 Strukturi Osoba u projektu MetodaEqualsZaVrijednosniTip definirati operatore == i != tako da donji primjeri daju očekivane rezultate.
         }
 
