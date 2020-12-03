@@ -33,17 +33,17 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 
         public static void UsporedbaStruktura()
         {
-            // TODO:024 Stvoriti dvije strukture ms1 i ms2 na isti način kao i za gornje instance klasa mk1 i mk2
+            //  Stvoriti dvije strukture ms1 i ms2 na isti način kao i za gornje instance klasa mk1 i mk2
             MojaStruktura ms1 = new MojaStruktura();
             MojaStruktura ms2 = new MojaStruktura();
 
-            // TODO:025 Usporediti objekte ms1 i ms2 korištenjem statičke metode MojaStruktura.Equals te ispisati rezultat
+            //  Usporediti objekte ms1 i ms2 korištenjem statičke metode MojaStruktura.Equals te ispisati rezultat
             Console.WriteLine(MojaStruktura.Equals(ms1, ms2));
 
-            // TODO:026 Usporediti objekte ms1 i ms2 pozivom metode ms1.Equals te ispisati rezultat
+            //  Usporediti objekte ms1 i ms2 pozivom metode ms1.Equals te ispisati rezultat
             Console.WriteLine(ms1.Equals(ms2));
 
-            // TODO:027 Usporediti objekte ms1 i ms2 pozivom metode ms2.Equals te ispisati rezultat
+            //  Usporediti objekte ms1 i ms2 pozivom metode ms2.Equals te ispisati rezultat
             Console.WriteLine(ms2.Equals(ms1));
         }
 
