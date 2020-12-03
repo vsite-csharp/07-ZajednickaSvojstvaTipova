@@ -62,7 +62,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             Console.WriteLine(Osoba.ReferenceEquals(osobaA, osobaB));
         }
 
-        // TODO:030 Pokrenuti program bez debuggera (Ctrl+F5) i pogledati ispis
+        // Pokrenuti program bez debuggera (Ctrl+F5) i pogledati ispis
         static void Main(string[] args)
         {
             Util.IspisNaslova("Usporedba referenci na isti objekt");
