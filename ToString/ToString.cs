@@ -20,7 +20,6 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 
     }
 
-    // TODO:010 Pokrenuti program i pogledati ispise instanci strukture KompleksniBroj.
     class ToString
     {
         static void Main(string[] args)

@@ -3,8 +3,7 @@ using System.Diagnostics;
 
 namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
-    // TODO:031 Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
-    public class Osoba
+    public class Osoba : IEquatable<Osoba>
     {
         public Osoba(string ime, int matičniBroj)
         {
@@ -15,11 +14,19 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         string ime;       // član referentnog tipa
         int matičniBroj;  // član vrijednosnog tipa
 
-        // TODO:032 Implementirati metodu Equals(Osoba) iz sučelja IEquatable<Osoba> tako da za osobe s istim imenom i istim matičnim brojem rezultat bude true
+        
+        public bool Equals(Osoba other)
+        {
+            if(other == null)return false;
+            if (typeof(Osoba) != other.GetType()) return false;
+            if (Osoba.ReferenceEquals(this, other)) return true;
+            return ime == other.ime && matičniBroj == other.matičniBroj;
+        }
 
-
-        // TODO:033 Nadglasati (override) metodu Equals(object) tako da poziva Equals(Osoba)
-
+        public override bool Equals(object obj)
+        {
+            return Equals(obj as Osoba);
+        }
 
         public override string ToString()
         {
@@ -30,6 +37,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         {
             ime = novoIme;
         }
+
     }
 
     class EqualsZaReferentniTip
@@ -62,7 +70,6 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             Console.WriteLine(Osoba.ReferenceEquals(osobaA, osobaB));
         }
 
-        // TODO:030 Pokrenuti program bez debuggera (Ctrl+F5) i pogledati ispis
         static void Main(string[] args)
         {
             Util.IspisNaslova("Usporedba referenci na isti objekt");
