@@ -16,21 +16,17 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 
             string ime;
             int matičniBroj;
-            
+            //TODO:052
             //implementirati metodu Equals(Osoba) iz sučelja IEquatable<Osoba> tako da za osobe s istim matičnim brojem rezultat bude true (bez obzira na ime)
             public bool Equals(Osoba other)
             {
-                if (matičniBroj == matičniBroj && ime!=ime)
-                    return true;
-                if (other.ime==null)
-                    return false;
-                return ime == other.ime && matičniBroj == other.matičniBroj;
+                throw new NotImplementedException();
             }
             //TODO:053
             //  Nadglasati (override) metodu Equals(object) tako da poziva Equals(Osoba)
             public override bool Equals(object obj)
             {
-                return Equals(obj as Osoba);
+                return Equals(obj);
             }
 
             public override string ToString()
