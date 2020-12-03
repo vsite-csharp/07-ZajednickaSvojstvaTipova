@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
-    // TODO:031 Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
+    // Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
     public class Osoba : IEquatable<Osoba>
     {
         public Osoba(string ime, int matičniBroj)
