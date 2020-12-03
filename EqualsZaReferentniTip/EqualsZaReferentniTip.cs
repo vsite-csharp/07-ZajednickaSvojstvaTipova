@@ -23,6 +23,11 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             return ime == other.ime && matičniBroj == other.matičniBroj;
         }
 
+        public override int GetHashCode()
+        {
+            return ime.GetHashCode() ^ matičniBroj.GetHashCode();
+        }
+
         public override bool Equals(object obj)
         {
             return Equals(obj as Osoba);
