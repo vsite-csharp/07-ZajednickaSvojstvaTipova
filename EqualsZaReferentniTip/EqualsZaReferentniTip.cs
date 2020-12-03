@@ -37,6 +37,10 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         {
             return base.Equals(obj);
         }
+        public override int GetHashCode()
+        {
+            return ime.GetHashCode() ^ matičniBroj.GetHashCode();
+        }
 
         public override string ToString()
         {
