@@ -36,8 +36,16 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         public void PromijeniIme(string novoIme)
         {
             ime = novoIme;
-        }
 
+        }
+        public static bool operator == (Osoba a, Osoba b)
+        {
+            return Equals(a, b);
+        }
+        public static bool operator !=(Osoba a, Osoba b)
+        {
+            return !(a == b);
+        }
     }
 
     class EqualsZaReferentniTip
