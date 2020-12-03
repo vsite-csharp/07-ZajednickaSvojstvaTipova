@@ -33,7 +33,10 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         {
             return Equals(obj as Osoba);
         }
-
+        public override int GetHashCode()
+        {
+            return ime.GetHashCode() ^matičniBroj.GetHashCode();
+        }
         public override string ToString()
         {
             return $"'{ime}, {matičniBroj}'";
