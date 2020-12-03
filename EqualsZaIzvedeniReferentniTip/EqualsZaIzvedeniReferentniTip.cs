@@ -27,10 +27,10 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         }
 
         // TODO:043 Nadglasati (override) metodu Equals(object) tako da poziva metodu Equals(Student).
-        //public override bool Equals(Object obj)
-        //{
-        //   return Equals as obj() ;
-        //}
+        public override bool Equals(Object obj)
+        {
+            return Equals(obj as Student);
+        }
 
         public override string ToString()
         {

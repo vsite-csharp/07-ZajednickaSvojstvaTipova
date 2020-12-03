@@ -43,7 +43,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             Console.WriteLine(osobaB.Equals(osobaA));
         }
 
-        // TODO:050 Pokrenuti program i pogledati ispis.
+        // 050 Pokrenuti program i pogledati ispis.
         static void Main(string[] args)
         {
             // dvije osobe s različitim imenima i MB
