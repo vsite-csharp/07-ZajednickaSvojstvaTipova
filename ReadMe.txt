@@ -19,7 +19,7 @@ Ilustrira razliku između statičke i nestatičke metode Equals.
 
 EqualsZaReferentniTip
 ---------------------
-Primjer gaženja (override) metode Equals za referentni tip koji je
+Primjer nadglasavanja (override) metode Equals za referentni tip koji je
 izveden izravno iz System.Object.
 Klasa Osoba sadrži jedno polje referentnog tipa (string m_ime) i jedno
 polje vrijednosnog tipa (int m_matičniBroj). Želimo definirati da su
