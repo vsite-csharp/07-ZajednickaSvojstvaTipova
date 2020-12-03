@@ -6,7 +6,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
     public class EqualsZaVrijednosniTip
     {
         // TODO:051 Definirati da struktura Osoba implementira sučelje IEquatable<Osoba>
-        public struct Osoba
+        public struct Osoba 
         {
             public Osoba(string ime, int matičniBroj)
             {
