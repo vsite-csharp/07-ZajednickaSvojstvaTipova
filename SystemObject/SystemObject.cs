@@ -57,7 +57,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             MojaKlasa mk2 = mk1;
             MojaKlasa mk3 = new MojaKlasa();
 
-            // TODO:008 Otkomentirati donje naredbe i ispisati na konzolu rezultate usporedbi.
+            // Otkomentirati donje naredbe i ispisati na konzolu rezultate usporedbi.
             Console.WriteLine(mk1.Equals(mk2));
             Console.WriteLine(mk1.Equals(mk3));
             Console.WriteLine(mk2.Equals(mk1));
