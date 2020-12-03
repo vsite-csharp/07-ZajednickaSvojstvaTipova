@@ -20,7 +20,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         {
             if (other == null)
                 return false;
-            if (typeof(Osoba) != other.GetType())
+            if (GetType() != other.GetType())
                 return false;
             if (Osoba.ReferenceEquals(this, other))
                 return true;
