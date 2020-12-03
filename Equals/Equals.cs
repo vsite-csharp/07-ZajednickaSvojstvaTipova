@@ -44,7 +44,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             // Usporediti objekte ms1 i ms2 pozivom metode ms1.Equals te ispisati rezultat
             Console.WriteLine(ms1.Equals(ms2));
 
-            // TODO:027 Usporediti objekte ms1 i ms2 pozivom metode ms2.Equals te ispisati rezultat
+            // Usporediti objekte ms1 i ms2 pozivom metode ms2.Equals te ispisati rezultat
             Console.WriteLine(ms2.Equals(ms1));
         }
 
