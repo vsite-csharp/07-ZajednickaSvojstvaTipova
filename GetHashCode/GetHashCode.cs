@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
-    //  Pokrenuti program i provjeriti ispis.
+    // Pokrenuti program i provjeriti ispis.
 
     // Implementirati metodu GetHashCode u klasi Osoba iz projekta MetodaEqualsZaReferentiTip tako da se metoda Main može izvesti bez problema
 

@@ -13,7 +13,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             Console.WriteLine(string.Format("{0} != {1}: {2}", osobaA, osobaB, osobaA != osobaB));
         }
 
-        //  Pokrenuti program i pogledati ispise.
+        // Pokrenuti program i pogledati ispise.
         static void Main(string[] args)
         {
             Osoba osobaA = new Osoba("Janko", 1);

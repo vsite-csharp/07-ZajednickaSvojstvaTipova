@@ -3,8 +3,9 @@ using System.Diagnostics;
 
 namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
-    //  Definirati da klasa Student implementira sučelje IEquatable<Student>
-    class Student : Osoba,IEquatable<Student>
+    // Definirati da klasa Student implementira sučelje IEquatable<Student>
+
+    class Student : Osoba, IEquatable<Student>
     {
         public Student(string ime, int matičniBroj, string smjer, int godina) : base(ime, matičniBroj)
         {
@@ -15,15 +16,16 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         string smjer;
         int godina;
 
-        //  Implementirati metodu Equals(Student) iz sučelja IEquatable<Student> da uključi dodatne usporedbe da bi studenti bili jednaki samo ako su na istom smjeru i godini.
+        // Implementirati metodu Equals(Student) iz sučelja IEquatable<Student> da uključi dodatne usporedbe da bi studenti bili jednaki samo ako su na istom smjeru i godini.
 
         public bool Equals(Student other)
         {
-            if(base.Equals(other) == false)
+            if (base.Equals(other) == false)
             {
                 return false;
             }
-            if (Student.ReferenceEquals(this, other))
+
+            if (ReferenceEquals(this, other))
             {
                 return true;
             }
@@ -31,10 +33,11 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             return smjer == other.smjer && godina == other.godina;
         }
 
-        //  Nadglasati (override) metodu Equals(object) tako da poziva metodu Equals(Student).
+        // Nadglasati (override) metodu Equals(object) tako da poziva metodu Equals(Student).
+
         public override bool Equals(object obj)
         {
-            return base.Equals(obj as Osoba);
+            return Equals(obj as Student);
         }
 
         public override string ToString()
@@ -72,7 +75,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 
         }
 
-        //  Pokrenuti program i pogledati ispis.
+        // Pokrenuti program i pogledati ispis.
         static void Main(string[] args)
         {
             // dva različita studenta

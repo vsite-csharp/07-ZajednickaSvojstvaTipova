@@ -13,17 +13,15 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         public double Realni;
         public double Imaginarni;
 
-        //Nadglasati (override) metodu ToString tako da vraća niz u obliku: "2+3j", "2-j", "0", "j", "-j".
+        // TODO:011 Nadglasati (override) metodu ToString tako da vraća niz u obliku: "2+3j", "2-j", "0", "j", "-j".
         public override string ToString()
         {
-            //return base.ToString();
             return $"{Realni}+{Imaginarni}j";
         }
-
-
     }
 
-    //Pokrenuti program i pogledati ispise instanci strukture KompleksniBroj.
+    // Pokrenuti program i pogledati ispise instanci strukture KompleksniBroj.
+
     class ToString
     {
         static void Main(string[] args)
