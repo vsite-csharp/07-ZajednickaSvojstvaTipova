@@ -48,8 +48,18 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             ime = novoIme;
         }
 
-        
+        public static bool operator== (Osoba osobaA, Osoba osobaB)
+        {
+                return Equals(osobaA, osobaB);
+        }
+
+        public static bool operator!= (Osoba osobaA, Osoba osobaB)
+        {
+                return !(osobaA == osobaB);
+        }
     }
+
+    
 
     class EqualsZaReferentniTip
     {
