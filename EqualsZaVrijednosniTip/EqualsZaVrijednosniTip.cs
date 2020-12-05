@@ -40,6 +40,16 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             {
                 ime = novoIme;
             }
+
+            public static bool operator== (Osoba osobaA, Osoba osobaB)
+            {
+                return osobaA.Equals(osobaB);
+            }
+
+            public static bool operator!= (Osoba osobaA, Osoba osobaB)
+            {
+                return !(osobaA == osobaB);
+            }
         }
 
         public static void UsporedbaOsoba(Osoba osobaA, Osoba osobaB)
