@@ -3,17 +3,22 @@ using System.Diagnostics;
 
 namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
-    // TODO:061 U klasi Osoba iz projekta MetodaEqualsZaReferentiTip definirati operatore == i != tako da donji primjeri daju očekivane rezultate.
+    // 061 U klasi Osoba iz projekta MetodaEqualsZaReferentiTip definirati operatore == i != tako da donji primjeri daju očekivane rezultate.
 
+    // do sada smo imali metodu Equals(), uz tu metodu zgodno je implementirati operator == radi jednostavnosti
+    // tako da osobe možemo uspoređivati jednostavno operatororm ==
+    
+
+    
     class JednakostZaReferentniTip
     {
-        static void Jednakost(Osoba osobaA, Osoba osobaB)
+        static void Jednakost(Osoba osobaA, Osoba osobaB) // korisitmo Osobu iz drugog projekta, tamo implemetiramo operator == (F12 - go to definition na Osoba)
         {
             Console.WriteLine(string.Format("{0} == {1}: {2}", osobaA, osobaB, osobaA == osobaB));
             Console.WriteLine(string.Format("{0} != {1}: {2}", osobaA, osobaB, osobaA != osobaB));
         }
 
-        // TODO:060 Pokrenuti program i pogledati ispise.
+        // 060 Pokrenuti program i pogledati ispise.
         static void Main(string[] args)
         {
             Osoba osobaA = new Osoba("Janko", 1);
