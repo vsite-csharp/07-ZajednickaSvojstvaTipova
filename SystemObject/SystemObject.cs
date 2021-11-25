@@ -2,17 +2,17 @@
 
 namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
-    // TODO:000 Definirati klasu MojaKlasa bez ikakvih članova, samo s praznom definicijom.
-
+    // :000 Definirati klasu MojaKlasa bez ikakvih članova, samo s praznom definicijom.
+    class MojaKlasa { };
 
     class SystemObject
     {
         public static void IspisToString()
         {
-            // TODO:001 Otkomentirati donje naredbe.
-            //MojaKlasa mk1 = new MojaKlasa();
-            //MojaKlasa mk2 = mk1;
-            //MojaKlasa mk3 = new MojaKlasa();
+            //:001 Otkomentirati donje naredbe.
+            MojaKlasa mk1 = new MojaKlasa();
+            MojaKlasa mk2 = mk1;
+            MojaKlasa mk3 = new MojaKlasa();
 
             // TODO:002 Za svaki objekt (mk1, mk2, mk3) pozvati njegovu metodu ToString i ispisati na konzolu ono što ona vraća.
 
