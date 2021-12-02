@@ -3,9 +3,10 @@ using System.Diagnostics;
 
 namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
-    // TODO:031 Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
-    public class Osoba
+    // :031 Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
+    public class Osoba : IEquatable<Osoba>
     {
+
         public Osoba(string ime, int matičniBroj)
         {
             this.ime = ime;
@@ -15,10 +16,11 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         string ime;       // član referentnog tipa
         int matičniBroj;  // član vrijednosnog tipa
 
-        // TODO:032 Implementirati metodu Equals(Osoba) iz sučelja IEquatable<Osoba> tako da za osobe s istim imenom i istim matičnim brojem rezultat bude true
+
+        // :032 Implementirati metodu Equals(Osoba) iz sučelja IEquatable<Osoba> tako da za osobe s istim imenom i istim matičnim brojem rezultat bude true
 
 
-        // TODO:033 Nadglasati (override) metodu Equals(object) tako da poziva Equals(Osoba)
+        // :033 Nadglasati (override) metodu Equals(object) tako da poziva Equals(Osoba)
 
 
         public override string ToString()
@@ -30,8 +32,22 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         {
             ime = novoIme;
         }
-    }
+        public bool Equals(Osoba other)
+        {
+            if (other == null)
+                return false;
+            if (GetType() != other.GetType())
+                return false;
+            if (!Equals(ime, other.ime))
+                return false;
+            return matičniBroj.Equals(other.matičniBroj); //matičniBroj == other.MatičniBroj;
 
+        }
+        public override bool Equals(object obj)
+        {
+            return this.Equals(obj as Osoba);
+        }
+    }
     class EqualsZaReferentniTip
     {
         public static void UsporedbaOsoba(Osoba osobaA, Osoba osobaB)
@@ -62,45 +78,48 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             Console.WriteLine(Osoba.ReferenceEquals(osobaA, osobaB));
         }
 
-        // TODO:030 Pokrenuti program bez debuggera (Ctrl+F5) i pogledati ispis
+        // :030 Pokrenuti program bez debuggera (Ctrl+F5) i pogledati ispis
         static void Main(string[] args)
         {
             Util.IspisNaslova("Usporedba referenci na isti objekt");
             Osoba osobaA = new Osoba("Janko", 1);
             Osoba osobaB = osobaA;
             UsporedbaOsoba(osobaA, osobaB);
-  
+
             Console.WriteLine();
 
             Util.IspisNaslova("Usporedba s null referencom na objekt istog tipa");
             UsporedbaOsoba(osobaA, null);
-            
+
             Console.WriteLine();
 
             Util.IspisNaslova("Usporedba dviju osoba s različitim imenima i matičnim brojevima");
             osobaB = new Osoba("Marko", 2);
             UsporedbaOsoba(osobaA, osobaB);
-            
+
             Console.WriteLine();
 
             Util.IspisNaslova("Usporedba dviju osoba s istim imenima i različitim matičnim brojevima");
             osobaB = new Osoba("Janko", 5);
             UsporedbaOsoba(osobaA, osobaB);
-            
+
             Console.WriteLine();
 
             Util.IspisNaslova("Usporedba dviju osoba s istim imenima i istim matičnim brojevima");
             osobaB = new Osoba("Janko", 1);
             UsporedbaOsoba(osobaA, osobaB);
-            
+
             Console.WriteLine();
 
             Util.IspisNaslova("Usporedba bezimene osobe s osobom koja ima ime");
             osobaB = new Osoba(null, 2);
             UsporedbaOsoba(osobaA, osobaB);
-            
+
             Console.WriteLine("\nGOTOVO!!!");
             Console.ReadKey();
         }
     }
 }
+
+
+
