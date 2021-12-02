@@ -42,7 +42,10 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             return matičniBroj.Equals(other.matičniBroj); //matičniBroj == other.matičniBroj;
 
         }
-
+        public override int GetHashCode()
+        {
+            return ime.GetHashCode() ^ matičniBroj.GetHashCode();
+        }
         public override bool Equals(object obj)
         {
             return this.Equals(obj as Osoba);
