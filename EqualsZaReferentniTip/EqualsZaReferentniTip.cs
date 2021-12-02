@@ -56,6 +56,11 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         {
             return this.Equals(obj as Osoba); // AKO NE USPIJE KASTATI VRATI NULL REFERENCU 
         }
+
+        public override int GetHashCode()
+        { // simetrična  je equals metodi 
+            return ime.GetHashCode() ^ matičniBroj.GetHashCode();
+        }
     }
 
     class EqualsZaReferentniTip
