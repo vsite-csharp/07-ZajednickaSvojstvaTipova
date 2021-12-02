@@ -17,12 +17,14 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 
         public override string ToString()
         {
-            return base.ToString();
+            if (Imaginarni < 0)
+                return $"{Realni}{Imaginarni}j";
+            return $"{Realni}{Imaginarni}j";
         }
 
     }
 
-    // TODO:010 Pokrenuti program i pogledati ispise instanci strukture KompleksniBroj.
+    // 010 Pokrenuti program i pogledati ispise instanci strukture KompleksniBroj.
     class ToString
     {
         // TODO:012 Pokrenuti program i usporediti ispise s očekivanima.
