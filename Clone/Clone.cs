@@ -3,14 +3,14 @@ using System.Diagnostics;
 
 namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
-    // TODO:101 Klasi Osoba iz projekta MetodaEqualsZaReferentiTip navesti da implementira sučelje ICloneable.
+    // :101 Klasi Osoba iz projekta MetodaEqualsZaReferentiTip navesti da implementira sučelje ICloneable.
 
-    // TODO:102 Implementirati metodu sučelja object ICloneable.Clone() i tipski sigurnu metodu Osoba Clone()
+    // :102 Implementirati metodu sučelja object ICloneable.Clone() i tipski sigurnu metodu Osoba Clone()
 
 
     class Clone
     {
-        // TODO:100 Pokrenuti program i pogledati ispis.
+        // :100 Pokrenuti program i pogledati ispis.
         public static void Jednakost()
         {
             Osoba osobaA = new Osoba("Janko", 1);
