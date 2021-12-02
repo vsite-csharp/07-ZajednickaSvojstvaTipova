@@ -10,13 +10,14 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 
     class Clone
     {
-        // TODO:100 Pokrenuti program i pogledati ispis.
+        // :100 Pokrenuti program i pogledati ispis.
         public static void Jednakost()
         {
             Osoba osobaA = new Osoba("Janko", 1);
             Osoba osobaB = osobaA;
+
             // TODO:103 Otkomentirati donju naredbu i provjeriti ispravnost implementacije metode Clone donjim programom
-            //osobaB = (Osoba)osobaA.Clone();
+            osobaB = (Osoba)osobaA.Clone();
             Console.WriteLine($"{osobaA} ReferenceEquals( {osobaB} ): {Osoba.ReferenceEquals(osobaA, osobaB)}");
             Console.WriteLine($"{osobaA} == {osobaB}: {osobaA == osobaB}");
             Console.WriteLine($"{osobaA} != {osobaB}: {osobaA != osobaB}");
