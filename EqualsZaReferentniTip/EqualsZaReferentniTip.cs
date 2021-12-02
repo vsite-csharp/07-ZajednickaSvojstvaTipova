@@ -4,7 +4,7 @@ using System.Diagnostics;
 namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     // :031 Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
-    public class Osoba : IEquatable<Osoba> // moramo staviti s kojim tipom uspoređujemo 
+    public class Osoba : IEquatable<Osoba>, ICloneable // moramo staviti s kojim tipom uspoređujemo 
     {
         public Osoba(string ime, int matičniBroj)
         {
@@ -60,6 +60,17 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         public override int GetHashCode()
         { // simetrična  je equals metodi 
             return ime.GetHashCode() ^ matičniBroj.GetHashCode();
+        }
+
+        object ICloneable.Clone()
+        {
+            return new Osoba(ime, matičniBroj);
+            
+        }
+
+        public Osoba Clone()
+        {
+            return new Osoba(ime, matičniBroj);
         }
     }
 
