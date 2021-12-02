@@ -4,7 +4,7 @@ using System.Diagnostics;
 namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     // Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
-    public class Osoba : IEquatable<Osoba>
+    public class Osoba : IEquatable<Osoba>, ICloneable
     {
         public Osoba(string ime, int matičniBroj)
         {
@@ -47,6 +47,16 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         public override int GetHashCode()
         {
             return this.ime.GetHashCode() ^ this.matičniBroj.GetHashCode(); // Često se koristi ^ (XOR) za overrideanje GetHashCode()
+        }
+
+        object ICloneable.Clone() // Nije tipski sigurna s obzirom na klasu Osoba
+        {
+            return new Osoba(this.ime, this.matičniBroj);
+        }
+
+        public Osoba Clone() // Tipski sigurna metoda Clone()
+        {
+            return new Osoba(this.ime, this.matičniBroj);
         }
 
         public override string ToString()
