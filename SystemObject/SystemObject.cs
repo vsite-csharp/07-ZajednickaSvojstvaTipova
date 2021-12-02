@@ -9,21 +9,21 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
     {
         public static void IspisToString()
         {
-            // TODO:001 Otkomentirati donje naredbe.
-            //MojaKlasa mk1 = new MojaKlasa();
-            //MojaKlasa mk2 = mk1;
-            //MojaKlasa mk3 = new MojaKlasa();
+            // 001 Otkomentirati donje naredbe.
+            MojaKlasa mk1 = new MojaKlasa();
+            MojaKlasa mk2 = mk1;
+            MojaKlasa mk3 = new MojaKlasa();
 
-            // TODO:002 Za svaki objekt (mk1, mk2, mk3) pozvati njegovu metodu ToString i ispisati na konzolu ono što ona vraća.
+            // 002 Za svaki objekt (mk1, mk2, mk3) pozvati njegovu metodu ToString i ispisati na konzolu ono što ona vraća.
 
         }
 
         public static void IspisGetType()
         {
-            // TODO:003 Otkomentirati donje naredbe.
-            //MojaKlasa mk1 = new MojaKlasa();
-            //MojaKlasa mk2 = mk1;
-            //MojaKlasa mk3 = new MojaKlasa();
+            // 003 Otkomentirati donje naredbe.
+            MojaKlasa mk1 = new MojaKlasa();
+            MojaKlasa mk2 = mk1;
+            MojaKlasa mk3 = new MojaKlasa();
 
             // TODO:004 Za svaki objekt (mk1, mk2, mk3) pozvati njegovu metodu GetType i ispisati na konzolu ono što ona vraća.
 
