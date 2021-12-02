@@ -28,7 +28,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 
         public static void IspisGetType()
         {
-            // TODO:003 Otkomentirati donje naredbe.
+            // :003 Otkomentirati donje naredbe.
             MojaKlasa mk1 = new MojaKlasa();
             MojaKlasa mk2 = mk1;
             MojaKlasa mk3 = new MojaKlasa();
@@ -43,7 +43,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 
         public static void IspisGetHashCode()
         {
-            // TODO:005 Otkomentirati donje naredbe.
+            // :005 Otkomentirati donje naredbe.
             MojaKlasa mk1 = new MojaKlasa();
             MojaKlasa mk2 = mk1;
             MojaKlasa mk3 = new MojaKlasa();
