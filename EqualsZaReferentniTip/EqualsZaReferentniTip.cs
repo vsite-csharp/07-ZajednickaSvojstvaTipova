@@ -44,6 +44,11 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             return this.Equals(obj as Osoba);
         }
 
+        public override int GetHashCode()
+        {
+            return this.ime.GetHashCode() ^ this.matičniBroj.GetHashCode(); // Često se koristi ^ (XOR) za overrideanje GetHashCode()
+        }
+
         public override string ToString()
         {
             return $"'{ime}, {matičniBroj}'";
