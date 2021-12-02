@@ -5,7 +5,7 @@ using System.Linq;
 namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     //031 Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
-    public class Osoba : IEquatable<Osoba>
+    public class Osoba : IEquatable<Osoba>, ICloneable
     {
         public Osoba(string ime, int matičniBroj)
         {
@@ -19,7 +19,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         //032 Implementirati metodu Equals(Osoba) iz sučelja IEquatable<Osoba> tako da za osobe s istim imenom i istim matičnim brojem rezultat bude true
 
 
-        // 033 Nadglasati (override) metodu Equals(object) tako da poziva Equals(Osoba)
+        //033 Nadglasati (override) metodu Equals(object) tako da poziva Equals(Osoba)
 
 
         public override string ToString()
@@ -46,6 +46,21 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         public override bool Equals(object obj)
         {
             return this.Equals(obj as Osoba);
+        }
+
+        public override int GetHashCode()
+        {
+            return ime.GetHashCode() ^ matičniBroj.GetHashCode();
+        }
+
+        object ICloneable.Clone()
+        {
+            return new Osoba(ime, matičniBroj);
+        }
+
+        public Osoba Clone()
+        {
+            return new Osoba(ime, matičniBroj);
         }
     }
 
