@@ -5,7 +5,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     // 031 Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
 
-    public class Osoba : IEquatable<Osoba>
+    public class Osoba : IEquatable<Osoba>, ICloneable
     {
         public Osoba(string ime, int matičniBroj)
         {
@@ -63,6 +63,16 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         {
             //GetHashCode prati Equals. Sto mo tamo povjerili i ovdje treabmo:
             return ime.GetHashCode()^matičniBroj.GetHashCode();//^je XOR
+        }
+
+        object ICloneable.Clone()//nije javno dostupna, daje compajleru dozanja
+        {
+            return new Osoba(ime, matičniBroj);
+        }
+
+        public Osoba Clone()//ovo ce u vecini slucajeva vraca tipski sigurnu metodu CLone
+        {
+            return new Osoba(ime, matičniBroj);
         }
     }
 
