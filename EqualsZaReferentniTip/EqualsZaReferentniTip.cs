@@ -3,8 +3,8 @@ using System.Diagnostics;
 
 namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
-    // TODO:031 Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
-    public class Osoba
+    // Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
+    public class Osoba : IEquatable<Osoba>
     {
         public Osoba(string ime, int matičniBroj)
         {
@@ -15,11 +15,34 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         string ime;       // član referentnog tipa
         int matičniBroj;  // član vrijednosnog tipa
 
-        // TODO:032 Implementirati metodu Equals(Osoba) iz sučelja IEquatable<Osoba> tako da za osobe s istim imenom i istim matičnim brojem rezultat bude true
+        // Implementirati metodu Equals(Osoba) iz sučelja IEquatable<Osoba> tako da za osobe s istim imenom i istim matičnim brojem rezultat bude true
 
 
-        // TODO:033 Nadglasati (override) metodu Equals(object) tako da poziva Equals(Osoba)
+        // Nadglasati (override) metodu Equals(object) tako da poziva Equals(Osoba)
 
+
+        public bool Equals(Osoba other)
+        {
+            if (other == null)
+            {
+                return false;
+            }
+
+            if (this.GetType() != other.GetType())
+                return false;
+
+            if (!Equals(this.ime, other.ime))
+            {
+                return false;
+            }
+
+            return this.matičniBroj.Equals(other.matičniBroj); // this.matičniBroj == other.matičniBroj
+        }
+
+        public override bool Equals(object obj)
+        {
+            return this.Equals(obj as Osoba);
+        }
 
         public override string ToString()
         {
@@ -47,6 +70,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             {
                 Console.WriteLine("POGREŠKA: osobaA je null referenca pa nema metodu Equals!");
             }
+
             try
             {
                 Console.WriteLine(osobaB.Equals(osobaA));
@@ -62,7 +86,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             Console.WriteLine(Osoba.ReferenceEquals(osobaA, osobaB));
         }
 
-        // TODO:030 Pokrenuti program bez debuggera (Ctrl+F5) i pogledati ispis
+        // Pokrenuti program bez debuggera (Ctrl+F5) i pogledati ispis
         static void Main(string[] args)
         {
             Util.IspisNaslova("Usporedba referenci na isti objekt");
