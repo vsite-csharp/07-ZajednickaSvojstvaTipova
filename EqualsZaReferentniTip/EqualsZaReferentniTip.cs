@@ -58,6 +58,12 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             //ovaj Equals, zove gornji overridani Equals
 
         }
+
+        public override int GetHashCode()
+        {
+            //GetHashCode prati Equals. Sto mo tamo povjerili i ovdje treabmo:
+            return ime.GetHashCode()^matičniBroj.GetHashCode();//^je XOR
+        }
     }
 
     class EqualsZaReferentniTip
