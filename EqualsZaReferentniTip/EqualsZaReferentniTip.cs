@@ -4,7 +4,7 @@ using System.Diagnostics;
 namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     // :031 Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
-    public class Osoba : IEquatable<Osoba>
+    public class Osoba : IEquatable<Osoba>, ICloneable<Osoba>
     {
         public Osoba(string ime, int matičniBroj)
         {
@@ -31,6 +31,16 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             return ime.GetHashCode() ^ matičniBroj.GetHashCode();
         }
 
+        object ICloneable.Clone()
+        {
+            return new Osoba(ime, matičniBroj);
+        }
+
+        public Osoba Clone()
+        {
+            return new Osoba(ime, matičniBroj);
+        }
+
         public void PromijeniIme(string novoIme)
         {
             ime = novoIme;
@@ -55,6 +65,11 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             return this.Equals(obj as Osoba);
             // ako ne uspije, biti će null referenca
         }
+    }
+
+    internal interface ICloneable<T>
+    {
+
     }
 
     class EqualsZaReferentniTip

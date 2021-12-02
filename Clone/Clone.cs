@@ -18,10 +18,11 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             // TODO:103 Otkomentirati donju naredbu i provjeriti ispravnost implementacije metode Clone donjim programom
             //osobaB = (Osoba)osobaA.Clone();
             Console.WriteLine($"{osobaA} ReferenceEquals( {osobaB} ): {Osoba.ReferenceEquals(osobaA, osobaB)}");
-            Console.WriteLine($"{osobaA} == {osobaB}: {osobaA == osobaB}");
-            Console.WriteLine($"{osobaA} != {osobaB}: {osobaA != osobaB}");
+            //true, potpuno isto mjesto u memoriji
+            Console.WriteLine($"{osobaA} == {osobaB}: {osobaA == osobaB}"); //true
+            Console.WriteLine($"{osobaA} != {osobaB}: {osobaA != osobaB}"); //false
 
-            osobaB.PromijeniIme("Pero");
+            osobaB.PromijeniIme("Pero"); //plitka kopija
             Console.WriteLine($"{osobaA} ReferenceEquals( {osobaB} ): {Osoba.ReferenceEquals(osobaA, osobaB)}");
             Console.WriteLine($"{osobaA} == {osobaB}: {osobaA == osobaB}");
             Console.WriteLine($"{osobaA} != {osobaB}: {osobaA != osobaB}");
