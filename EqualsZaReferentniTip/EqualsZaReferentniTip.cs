@@ -26,6 +26,11 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             return $"'{ime}, {matičniBroj}'";
         }
 
+        public override int GetHashCode()
+        {
+            return ime.GetHashCode() ^ matičniBroj.GetHashCode();
+        }
+
         public void PromijeniIme(string novoIme)
         {
             ime = novoIme;
