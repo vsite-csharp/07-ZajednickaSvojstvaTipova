@@ -3,8 +3,9 @@ using System.Diagnostics;
 
 namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
-    // TODO:031 Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
-    public class Osoba
+    // 031 Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
+
+    public class Osoba : IEquatable<Osoba>
     {
         public Osoba(string ime, int matičniBroj)
         {
@@ -15,11 +16,31 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         string ime;       // član referentnog tipa
         int matičniBroj;  // član vrijednosnog tipa
 
-        // TODO:032 Implementirati metodu Equals(Osoba) iz sučelja IEquatable<Osoba> tako da za osobe s istim imenom i istim matičnim brojem rezultat bude true
+        // 032 Implementirati metodu Equals(Osoba) iz sučelja IEquatable<Osoba> tako da za osobe s istim imenom i istim matičnim brojem rezultat bude true
 
 
-        // TODO:033 Nadglasati (override) metodu Equals(object) tako da poziva Equals(Osoba)
+        // 033 Nadglasati (override) metodu Equals(object) tako da poziva Equals(Osoba)
+        public bool Equals(Osoba other)
+        {
+            //provjeri je li slucajno null referenca:
+            if (other == null)
+            {
+                return false;
+            }
 
+            if (GetType() != other.GetType())
+            {
+                return false;
+            }
+            //moramo raditi usporedbu po svim clanovima objekta!
+            //za referentne tipove cemo pozvati staticku metodu Equals:
+            if (!Equals(ime, other.ime))//ime je private, ono je def unutar ove klase
+            {
+                return false;
+            }
+
+            return matičniBroj.Equals(other.matičniBroj); //ili matičniBroj == other.matičniBroj;
+        }
 
         public override string ToString()
         {
@@ -29,6 +50,13 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         public void PromijeniIme(string novoIme)
         {
             ime = novoIme;
+        }
+
+        public override bool Equals(object obj)
+        {
+            return this.Equals(obj as Osoba);//probat ce castati, ako ne ide vratiti ce null referencu
+            //ovaj Equals, zove gornji overridani Equals
+
         }
     }
 
@@ -62,7 +90,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             Console.WriteLine(Osoba.ReferenceEquals(osobaA, osobaB));
         }
 
-        // TODO:030 Pokrenuti program bez debuggera (Ctrl+F5) i pogledati ispis
+        // 030 Pokrenuti program bez debuggera (Ctrl+F5) i pogledati ispis
         static void Main(string[] args)
         {
             Util.IspisNaslova("Usporedba referenci na isti objekt");
