@@ -17,11 +17,12 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             MojaKlasa mk1 = new MojaKlasa();
             MojaKlasa mk2 = null;
 
-            // TODO:020 Usporediti objekte mk1 i mk2 korištenjem statičke metode MojaKlasa.Equals te ispisati rezultat
+            // 020 Usporediti objekte mk1 i mk2 korištenjem statičke metode MojaKlasa.Equals te ispisati rezultat
+            Console.WriteLine(MojaKlasa.Equals(mk1, mk2));
 
-
-            // TODO:021 Usporediti reference na objekte mk1 i mk2 korištenjem statičke metode MojaKlasa.ReferenceEquals te ispisati rezultat
-
+            // 021 Usporediti reference na objekte mk1 i mk2 korištenjem statičke metode MojaKlasa.ReferenceEquals te ispisati rezultat
+            Console.WriteLine(ReferenceEquals(mk1, mk2));
+            //rade istu stvar ako nije overriden equals
 
             // TODO:022 Usporediti objekte mk1 i mk2 pozivom metode mk1.Equals te ispisati rezultat
 
