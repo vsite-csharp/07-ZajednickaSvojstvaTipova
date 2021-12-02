@@ -17,13 +17,16 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 
         // Implementirati metodu Equals(Osoba) iz sučelja IEquatable<Osoba> tako da za osobe s istim imenom i istim matičnim brojem rezultat bude true
 
-
         // Nadglasati (override) metodu Equals(object) tako da poziva Equals(Osoba)
         public override bool Equals(object obj)
         {
             return this.Equals(obj as Osoba);
         }
 
+        public override int GetHashCode()
+        {
+            return ime.GetHashCode() ^ matičniBroj.GetHashCode();
+        }
 
         public override string ToString()
         {
@@ -84,36 +87,36 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             Osoba osobaA = new Osoba("Janko", 1);
             Osoba osobaB = osobaA;
             UsporedbaOsoba(osobaA, osobaB);
-  
+
             Console.WriteLine();
 
             Util.IspisNaslova("Usporedba s null referencom na objekt istog tipa");
             UsporedbaOsoba(osobaA, null);
-            
+
             Console.WriteLine();
 
             Util.IspisNaslova("Usporedba dviju osoba s različitim imenima i matičnim brojevima");
             osobaB = new Osoba("Marko", 2);
             UsporedbaOsoba(osobaA, osobaB);
-            
+
             Console.WriteLine();
 
             Util.IspisNaslova("Usporedba dviju osoba s istim imenima i različitim matičnim brojevima");
             osobaB = new Osoba("Janko", 5);
             UsporedbaOsoba(osobaA, osobaB);
-            
+
             Console.WriteLine();
 
             Util.IspisNaslova("Usporedba dviju osoba s istim imenima i istim matičnim brojevima");
             osobaB = new Osoba("Janko", 1);
             UsporedbaOsoba(osobaA, osobaB);
-            
+
             Console.WriteLine();
 
             Util.IspisNaslova("Usporedba bezimene osobe s osobom koja ima ime");
             osobaB = new Osoba(null, 2);
             UsporedbaOsoba(osobaA, osobaB);
-            
+
             Console.WriteLine("\nGOTOVO!!!");
             Console.ReadKey();
         }
