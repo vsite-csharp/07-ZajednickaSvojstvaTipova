@@ -4,7 +4,7 @@ using System.Diagnostics;
 namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     // :031 Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
-    public class Osoba : IEquatable<Osoba>
+    public class Osoba : IEquatable<Osoba>, ICloneable
     {
         public Osoba(string ime, int matičniBroj)
         {
@@ -49,6 +49,16 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         public override bool Equals(object obj)
         {
             return this.Equals(obj as Osoba);
+        }
+
+        object ICloneable.Clone()
+        {
+            return new Osoba(ime, matičniBroj);
+        }
+
+        public Osoba Clone()
+        {
+            return new Osoba(ime, matičniBroj);
         }
     }
 
