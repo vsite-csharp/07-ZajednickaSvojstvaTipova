@@ -3,7 +3,7 @@
 namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     // :000 Definirati klasu MojaKlasa bez ikakvih članova, samo s praznom definicijom.
-    class MojaKlasa { };
+    class MojaKlasa { }
 
     class SystemObject
     {
@@ -14,46 +14,52 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             MojaKlasa mk2 = mk1;
             MojaKlasa mk3 = new MojaKlasa();
 
-            // TODO:002 Za svaki objekt (mk1, mk2, mk3) pozvati njegovu metodu ToString i ispisati na konzolu ono što ona vraća.
-
+            // :002 Za svaki objekt (mk1, mk2, mk3) pozvati njegovu metodu ToString i ispisati na konzolu ono što ona vraća.
+            Console.WriteLine(mk1.ToString());
+            Console.WriteLine(mk2.ToString());
+            Console.WriteLine(mk3.ToString());
         }
 
         public static void IspisGetType()
         {
-            // TODO:003 Otkomentirati donje naredbe.
-            //MojaKlasa mk1 = new MojaKlasa();
-            //MojaKlasa mk2 = mk1;
-            //MojaKlasa mk3 = new MojaKlasa();
+            // :003 Otkomentirati donje naredbe.
+            MojaKlasa mk1 = new MojaKlasa();
+            MojaKlasa mk2 = mk1;
+            MojaKlasa mk3 = new MojaKlasa();
 
-            // TODO:004 Za svaki objekt (mk1, mk2, mk3) pozvati njegovu metodu GetType i ispisati na konzolu ono što ona vraća.
-
+            // :004 Za svaki objekt (mk1, mk2, mk3) pozvati njegovu metodu GetType i ispisati na konzolu ono što ona vraća.
+            Console.WriteLine(mk1.GetType());
+            Console.WriteLine(mk2.GetType());
+            Console.WriteLine(mk3.GetType());
         }
 
         public static void IspisGetHashCode()
         {
-            // TODO:005 Otkomentirati donje naredbe.
-            //MojaKlasa mk1 = new MojaKlasa();
-            //MojaKlasa mk2 = mk1;
-            //MojaKlasa mk3 = new MojaKlasa();
+            // :005 Otkomentirati donje naredbe.
+            MojaKlasa mk1 = new MojaKlasa();
+            MojaKlasa mk2 = mk1;
+            MojaKlasa mk3 = new MojaKlasa();
 
-            // TODO:006 Za svaki objekt (mk1, mk2, mk3) pozvati njegovu metodu GetHashCode i ispisati na konzolu ono što ona vraća.
-
+            // :006 Za svaki objekt (mk1, mk2, mk3) pozvati njegovu metodu GetHashCode i ispisati na konzolu ono što ona vraća.
+            Console.WriteLine(mk1.GetHashCode()); //za svaki run je isti HashCode za svaki objekt, 1., 2., 3., svaki objekt svoj hashcode, ali mi smo stavili mk1= mk2, pa imaju isti
+            Console.WriteLine(mk2.GetHashCode());
+            Console.WriteLine(mk3.GetHashCode());
         }
 
         public static void IspisEquals()
         {
-            // TODO:007 Otkomentirati donje naredbe.
-            //MojaKlasa mk1 = new MojaKlasa();
-            //MojaKlasa mk2 = mk1;
-            //MojaKlasa mk3 = new MojaKlasa();
+            // :007 Otkomentirati donje naredbe.
+            MojaKlasa mk1 = new MojaKlasa();
+            MojaKlasa mk2 = mk1;
+            MojaKlasa mk3 = new MojaKlasa();
 
-            // TODO:008 Otkomentirati donje naredbe i ispisati na konzolu rezultate usporedbi.
-            //Console.WriteLine(mk1.Equals(mk2));
-            //Console.WriteLine(mk1.Equals(mk3));
-            //Console.WriteLine(mk2.Equals(mk1));
-            //Console.WriteLine(mk2.Equals(mk3));
-            //Console.WriteLine(mk3.Equals(mk1));
-            //Console.WriteLine(mk3.Equals(mk2));
+            // :008 Otkomentirati donje naredbe i ispisati na konzolu rezultate usporedbi.
+            Console.WriteLine(mk1.Equals(mk2)); //true
+            Console.WriteLine(mk1.Equals(mk3)); //false
+            Console.WriteLine(mk2.Equals(mk1)); //true
+            Console.WriteLine(mk2.Equals(mk3)); //false
+            Console.WriteLine(mk3.Equals(mk1)); //false
+            Console.WriteLine(mk3.Equals(mk2)); //false
         }
 
         static void Main(string[] args)
