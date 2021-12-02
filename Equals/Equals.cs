@@ -21,7 +21,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             Console.WriteLine(Equals(mk1, mk2));
 
             // TODO:021 Usporediti reference na objekte mk1 i mk2 korištenjem statičke metode MojaKlasa.ReferenceEquals te ispisati rezultat
-            Console.WriteLine(MojaKlasa.ReferenceEquals(mk1, mk2));
+            //Console.WriteLine(MojaKlasa.ReferenceEquals(mk1, mk2));
             Console.WriteLine(ReferenceEquals(mk1, mk2));
 
 
@@ -30,7 +30,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 
 
             // :023 Usporediti objekte mk1 i mk2 pozivom metode mk2.Equals te ispisati rezultat
-            //Console.WriteLine(mk2.Equals(mk1));
+            Console.WriteLine(mk2.Equals(mk1));
             //system null reference exception -> pojavi se na objektu koji nije inicijaliziran
             //zato je korisno koristiti statičku metodu Equals jer će detektirati ako je neki objekt null referenca
 
