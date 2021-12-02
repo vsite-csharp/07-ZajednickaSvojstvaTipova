@@ -27,7 +27,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             Console.WriteLine(mk1.Equals(mk2));
 
             // :023 Usporediti objekte mk1 i mk2 pozivom metode mk2.Equals te ispisati rezultat
-            //Console.WriteLine(mk2.Equals(mk1));
+            Console.WriteLine(mk2.Equals(mk1));
 
 
         }
