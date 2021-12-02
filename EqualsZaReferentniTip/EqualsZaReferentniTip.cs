@@ -4,7 +4,7 @@ using System.Diagnostics;
 namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     // :031 Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
-    public class Osoba : IEquatable<Osoba> // tu u zagrade stavimo tip s kojim zelimo usporedivati
+    public class Osoba : IEquatable<Osoba>, ICloneable // tu u zagrade stavimo tip s kojim zelimo usporedivati
     {
         public Osoba(string ime, int matičniBroj)
         {
@@ -46,6 +46,23 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         public override bool Equals(object obj)
         {
             return this.Equals(obj as Osoba);
+        }
+
+        public override int GetHashCode()
+        {
+            //mora biti simetricna Equalsu tj sto tamo usporedujemo to mora utjecati na gethashcode
+            return ime.GetHashCode() ^ matičniBroj.GetHashCode();
+        }
+
+        object ICloneable.Clone()
+        {
+            return new Osoba(ime, matičniBroj);
+        }
+
+        //kompajler ne gleda povratnu vrijednost pa su mu to iste metode, ono kad je bilo onako
+        public Osoba Clone()
+        {
+            return new Osoba(ime, matičniBroj);
         }
     }
 
