@@ -6,7 +6,8 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
     {
         static void Main(string[] args)
         {
-            // TODO:080 Pokrenuti program i usporediti ispise. Koja dva znakovna niza daju najbliže brojeve?
+            // 080 Pokrenuti program i usporediti ispise. Koja dva znakovna niza daju najbliže brojeve?
+            // cat i cut daju najbliže brojeve -> cat = -1741487357, cut = -1740700925
 
             Console.WriteLine($"cat.GetHashCode() = {"cat".GetHashCode()}");
             Console.WriteLine($"cta.GetHashCode() = {"cta".GetHashCode()}");
