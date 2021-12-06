@@ -17,6 +17,16 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             string ime;
             int matičniBroj;
 
+            public static bool operator ==(Osoba a, Osoba b)
+            {
+                return a.ime == b.ime && a.matičniBroj == b.matičniBroj;
+            }
+
+            public static bool operator !=(Osoba a, Osoba b)
+            {
+                return !Equals(a, b);
+            }
+
             // :052 Implementirati metodu Equals(Osoba) iz sučelja IEquatable<Osoba> tako da za osobe s istim matičnim brojem rezultat bude true (bez obzira na ime)
             public bool Equals(Osoba other)
             {
