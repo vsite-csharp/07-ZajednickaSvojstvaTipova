@@ -15,7 +15,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         string smjer;
         int godina;
 
-        // TODO:042 Implementirati metodu Equals(Student) iz sučelja IEquatable<Student> da uključi dodatne usporedbe da bi studenti bili jednaki samo ako su na istom smjeru i godini.
+        // 042 Implementirati metodu Equals(Student) iz sučelja IEquatable<Student> da uključi dodatne usporedbe da bi studenti bili jednaki samo ako su na istom smjeru i godini.
 
 
         // 043 Nadglasati (override) metodu Equals(object) tako da poziva metodu Equals(Student).
