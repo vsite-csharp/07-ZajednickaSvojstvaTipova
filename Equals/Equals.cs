@@ -19,7 +19,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 
             // :020 Usporediti objekte mk1 i mk2 korištenjem statičke metode MojaKlasa.Equals te ispisati rezultat
             Console.WriteLine(MojaKlasa.Equals(mk1,mk2)); //Identična je za sve objekte gdje god se nalazi
-            Console.WriteLine(Equals(mk1,mk2)); //To prije identično je ovom gore, Object tip radi suporedbu po adresama
+            //Console.WriteLine(Equals(mk1,mk2)); //To prije identično je ovom gore, Object tip radi suporedbu po adresama
             //Uspoređujemo objekt sa adresom i objekt bez adrese. Ako su oba null reference vraća true. ? 
 
             // :021 Usporediti reference na objekte mk1 i mk2 korištenjem statičke metode MojaKlasa.ReferenceEquals te ispisati rezultat
@@ -32,7 +32,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             //
 
             // :023 Usporediti objekte mk1 i mk2 pozivom metode mk2.Equals te ispisati rezultat
-            //Console.WriteLine(mk2.Equals(mk1)); // Error jer je mk2 ne postoji, pokušavama pozvati metodu na objektu koji ne postoji. 
+            Console.WriteLine(mk2.Equals(mk1)); // Error jer je mk2 ne postoji, pokušavama pozvati metodu na objektu koji ne postoji. 
             //Ako je ijedan null referenca vraća false 
 
 
