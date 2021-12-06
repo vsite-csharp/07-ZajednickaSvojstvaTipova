@@ -10,7 +10,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 
     class Clone
     {
-        // TODO:100 Pokrenuti program i pogledati ispis.
+        //:100 Pokrenuti program i pogledati ispis.
         public static void Jednakost()
         {
             Osoba osobaA = new Osoba("Janko", 1);
