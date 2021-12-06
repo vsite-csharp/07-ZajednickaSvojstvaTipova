@@ -15,7 +15,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         {
             Osoba osobaA = new Osoba("Janko", 1);
             Osoba osobaB = osobaA;
-            // :103 Otkomentirati donju naredbu i provjeriti ispravnost implementacije metode Clone donjim programom
+            // :103 Otkomentirati donju naredbu i provjeriti ispravnost implementacije metode Clone donjim programom  
             osobaB = (Osoba)osobaA.Clone();
             Console.WriteLine($"{osobaA} ReferenceEquals( {osobaB} ): {Osoba.ReferenceEquals(osobaA, osobaB)}");
             Console.WriteLine($"{osobaA} == {osobaB}: {osobaA == osobaB}");
