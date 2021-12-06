@@ -43,7 +43,19 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             {
                 ime = novoIme;
             }
+
+            public static bool operator ==(Osoba a, Osoba b)
+            {
+                return a.Equals(b);
+            }
+
+            public static bool operator !=(Osoba a, Osoba b)
+            {
+                return !(a == b);
+            }
         }
+
+
 
         public static void UsporedbaOsoba(Osoba osobaA, Osoba osobaB)
         {
