@@ -20,9 +20,13 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             // 052 Implementirati metodu Equals(Osoba) iz sučelja IEquatable<Osoba> tako da za osobe s istim matičnim brojem rezultat bude true (bez obzira na ime)
             public bool Equals(Osoba other)
             {
-                if (matičniBroj != other.matičniBroj)
+                if (other.ime == String.Empty || other.matičniBroj == 0)
                     return false;
-                return true;
+                if (GetType() != other.GetType())
+                    return false;
+                if (matičniBroj == other.matičniBroj)
+                    return true;
+                return false;
             }
 
             // TODO:053 Nadglasati (override) metodu Equals(object) tako da poziva Equals(Osoba)
@@ -46,13 +50,15 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 
             public static bool operator ==(Osoba a, Osoba b)
             {
-                return a.Equals(b);
+                return Equals(a, b);
             }
 
             public static bool operator !=(Osoba a, Osoba b)
             {
                 return !(a == b);
             }
+
+
         }
 
 

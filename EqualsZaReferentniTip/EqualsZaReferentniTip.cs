@@ -31,15 +31,6 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             ime = novoIme;
         }
 
-        public bool Equals(Osoba other)
-        {
-            if (other == null)
-                    return false;
-            if (GetType() != other.GetType())
-                return false;
-            return matičniBroj.Equals(other.matičniBroj);
-        }
-
         public override bool Equals(object obj)
         {
             return this.Equals(obj as Osoba);
@@ -47,18 +38,48 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 
         public override int GetHashCode()
         {
-            return ime.GetHashCode() ^ matičniBroj.GetHashCode();
+            return this.ime.GetHashCode() ^ this.matičniBroj;
         }
 
         object ICloneable.Clone()
         {
-            return new Osoba(ime, matičniBroj);
+            return this.Clone();
         }
 
         public Osoba Clone()
         {
-            return new Osoba(ime, matičniBroj);
+            return new Osoba(this.ime, this.matičniBroj);
         }
+
+        public static bool operator ==(Osoba o1, Osoba o2)
+        {
+
+            return Equals(o1, o2);
+        }
+
+        public static bool operator !=(Osoba o1, Osoba o2)
+        {
+            return !Equals(o1, o2);
+        }
+
+        public bool Equals(Osoba other)
+        {
+            if (other == null)
+                return false;
+
+            if (this.GetType() != other.GetType())
+                return false;
+
+            if (!Equals(this.ime, other.ime))
+                return false;
+
+            if (!this.matičniBroj.Equals(other.matičniBroj))
+                return false;
+
+            return true;
+        }
+
+
 
     }
 

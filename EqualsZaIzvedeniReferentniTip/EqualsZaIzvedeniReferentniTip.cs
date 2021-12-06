@@ -37,6 +37,10 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             return Equals(obj as Student);
         }
 
+        public override int GetHashCode()
+        {
+            return this.godina ^ this.smjer.GetHashCode();
+        }
         public override string ToString()
         {
             return $"{base.ToString()} ({smjer} {godina}.godina)";
