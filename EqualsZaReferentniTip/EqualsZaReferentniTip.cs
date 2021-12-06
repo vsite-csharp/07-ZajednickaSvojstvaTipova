@@ -19,8 +19,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 
 
         //:033 Nadglasati (override) metodu Equals(object) tako da poziva Equals(Osoba)
-
-
+  
         public override string ToString()
         {
             return $"'{ime}, {matičniBroj}'";
@@ -59,6 +58,15 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         public Osoba Clone()
         {
             return new Osoba(ime, matičniBroj);
+        }
+        public static bool operator ==(Osoba o1, Osoba o2)
+        {
+            return Equals(o1, o2);
+        }
+
+        public static bool operator !=(Osoba o1, Osoba o2)
+        {
+            return !(o1 == o2);
         }
     }
 
