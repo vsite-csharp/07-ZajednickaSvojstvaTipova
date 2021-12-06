@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography;
 
 namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
@@ -16,20 +17,27 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         // :011 Nadglasati (override) metodu ToString tako da vraća niz u obliku: "2+3j", "2-j", "0", "j", "-j".
         public override string ToString()
         {
-            if (Imaginarni < 0)
-            {
-                return $"{Realni}{Imaginarni}j";
-            }
-            return $"{Realni}+{Imaginarni}j";
+            var resultString = Realni == 0 ? "" : $"{Realni}";
+
+            if (Imaginarni == 0)
+                return resultString == "" ? "0": $"{resultString}";
+            else if (Imaginarni == -1)
+                return $"{resultString}-j";
+            else if (Imaginarni < 0)
+                return $"{resultString}{Imaginarni}j";
+            else if (Imaginarni == 1)
+                return resultString == "" ? "j" : $"{resultString}+j";
+
+            return resultString == "" ? $"{Imaginarni}j" : $"{resultString}+{Imaginarni}j";
         }
     }
 
     // :010 Pokrenuti program i pogledati ispise instanci strukture KompleksniBroj.
     class ToString
     {
-        // TODO:012 Pokrenuti program i usporediti ispise s očekivanima.
+        // :012 Pokrenuti program i usporediti ispise s očekivanima.
 
-        // TODO:013 Pokrenuti testove u grupi TestToString i provjeriti prolaze li svi testovi.
+        // :013 Pokrenuti testove u grupi TestToString i provjeriti prolaze li svi testovi.
         static void Main(string[] args)
         {
             KompleksniBroj kb = new KompleksniBroj(2, 3);
