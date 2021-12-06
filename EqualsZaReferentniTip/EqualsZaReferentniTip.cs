@@ -12,8 +12,8 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             this.matičniBroj = matičniBroj;
         }
 
-        string ime;       // član referentnog tipa
-        int matičniBroj;  // član vrijednosnog tipa
+        protected string ime;       // član referentnog tipa
+        protected int matičniBroj;  // član vrijednosnog tipa
 
         // Implementirati metodu Equals(Osoba) iz sučelja IEquatable<Osoba> tako da za osobe s istim imenom i istim matičnim brojem rezultat bude true
 
