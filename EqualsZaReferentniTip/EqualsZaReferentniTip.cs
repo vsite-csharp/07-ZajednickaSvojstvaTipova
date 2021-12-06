@@ -17,8 +17,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         int matičniBroj;  // član vrijednosnog tipa
 
         // 032 Implementirati metodu Equals(Osoba) iz sučelja IEquatable<Osoba> tako da za osobe s istim imenom i istim matičnim brojem rezultat bude true
-
-
+       
         // 033 Nadglasati (override) metodu Equals(object) tako da poziva Equals(Osoba)
 
 
@@ -35,10 +34,8 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         public bool Equals(Osoba other)
         {
             if (other == null)
-                return false;
+                    return false;
             if (GetType() != other.GetType())
-                return false;
-            if (!Equals(ime, other.ime))
                 return false;
             return matičniBroj.Equals(other.matičniBroj);
         }
@@ -62,6 +59,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         {
             return new Osoba(ime, matičniBroj);
         }
+
     }
 
     class EqualsZaReferentniTip
