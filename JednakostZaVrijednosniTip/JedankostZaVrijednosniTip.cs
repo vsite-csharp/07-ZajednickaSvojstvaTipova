@@ -8,7 +8,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
     {
         public static void Jednakost(Osoba osobaA, Osoba osobaB)
         {
-            // TODO:070 Otkomentirati donje naredbe i provjeriti može li se kod prevesti i izvesti.
+            // 070 Otkomentirati donje naredbe i provjeriti može li se kod prevesti i izvesti.
             //Console.WriteLine($"{osobaA} == {osobaB}: {osobaA == osobaB}");
             //Console.WriteLine($"{osobaA} != {osobaB}: {osobaA != osobaB}");
 

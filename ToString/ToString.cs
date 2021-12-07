@@ -2,28 +2,66 @@
 
 namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
+
     struct KompleksniBroj
     {
+
         public KompleksniBroj(double realni, double imaginarni)
         {
             Realni = realni;
             Imaginarni = imaginarni;
         }
 
+
+
         public double Realni;
         public double Imaginarni;
 
-        // TODO:011 Nadglasati (override) metodu ToString tako da vraća niz u obliku: "2+3j", "2-j", "0", "j", "-j".
-        
+        // TODO:011 Nadglasati (override) metodu ToString tako davraća niz u obliku: "2+3j", "2-j", "0", "j", "-j".
+        public override string ToString()
+        {
+            //formatirani nacin ide sa $"{Realni}+{Imaginarni}j"
+            //Pokriti sve slučajeve ZA DZ
+            if (Realni != 0 && Imaginarni == -1)
+            {
+                return $"{Realni}-j";
+            }
+
+            if (Imaginarni == -1)
+            {
+                return $"-j";
+            }
+            if (Realni == 0 && Imaginarni < 0)
+            {
+                return $"{Imaginarni}j";
+            }
+
+            if (Imaginarni < 0)
+                return $"{Realni}{Imaginarni}j";
+
+            if (Imaginarni == 0)
+            {
+                return $"{Realni}";
+            }
+
+            if (Imaginarni == 1)
+            {
+                return $"j";
+            }
+
+
+
+            return $"{Realni}+{Imaginarni}j";
+        }
 
     }
 
-    // TODO:010 Pokrenuti program i pogledati ispise instanci strukture KompleksniBroj.
+    // 010 Pokrenuti program i pogledati ispise instanci strukture KompleksniBroj.
     class ToString
     {
-        // TODO:012 Pokrenuti program i usporediti ispise s očekivanima.
+        // 012 Pokrenuti program i usporediti ispise s očekivanima.
 
-        // TODO:013 Pokrenuti testove u grupi TestToString i provjeriti prolaze li svi testovi.
+        // 013 Pokrenuti testove u grupi TestToString i provjeriti prolaze li svi testovi.
         static void Main(string[] args)
         {
             KompleksniBroj kb = new KompleksniBroj(2, 3);

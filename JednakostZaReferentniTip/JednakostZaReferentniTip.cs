@@ -1,19 +1,25 @@
 ﻿using System;
 using System.Diagnostics;
 
+
 namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
-    // TODO:061 U klasi Osoba iz projekta MetodaEqualsZaReferentiTip definirati operatore == i != tako da donji primjeri daju očekivane rezultate.
+
+
+    // 061 U klasi Osoba iz projekta MetodaEqualsZaReferentiTip definirati operatore == i != tako da donji primjeri daju očekivane rezultate.
 
     class JednakostZaReferentniTip
     {
+
+
         static void Jednakost(Osoba osobaA, Osoba osobaB)
         {
             Console.WriteLine(string.Format("{0} == {1}: {2}", osobaA, osobaB, osobaA == osobaB));
             Console.WriteLine(string.Format("{0} != {1}: {2}", osobaA, osobaB, osobaA != osobaB));
         }
 
-        // TODO:060 Pokrenuti program i pogledati ispise.
+
+        // 060 Pokrenuti program i pogledati ispise.
         static void Main(string[] args)
         {
             Osoba osobaA = new Osoba("Janko", 1);
@@ -37,6 +43,8 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 
             osobaA = null;
             Jednakost(osobaA, osobaB);
+
+
 
             Console.WriteLine("\nGOTOVO!!!");
             Console.ReadKey();
