@@ -13,23 +13,54 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         public double Realni;
         public double Imaginarni;
 
-        // TODO:011 Nadglasati (override) metodu ToString tako da vraća niz u obliku: "2+3j", "2-j", "0", "j", "-j".
+        // :011 Nadglasati (override) metodu ToString tako da vraća niz u obliku: "2+3j", "2-j", "0", "j", "-j".
         public override string ToString()
         {
-            if (Imaginarni < 0)
+            //if (Imaginarni < 0)
+            //    return $"{Realni}{Imaginarni}j";                 
+            //return $"{Realni}+{Imaginarni}j";
+
+            //za DZ rješiti što kad je 0, manji od nula itd.
+            // riješiti sa nekoliko if-ova
+
+            if (Realni == 0)
+            {
+                switch (Imaginarni)
+                {
+                    case -1:
+                        return "-j";
+                    case 1:
+                        return "j";
+                    case 0:
+                        return "0";
+                    default:
+                        return $"{Imaginarni}j";
+                }
+            }
+            if (Imaginarni < -1)
+            {
+                return $"{Realni}{Imaginarni}j";
+            }            
+            switch (Imaginarni)
+            {
+                case 1:
+                    return $"{Realni}+j";
+                case -1:
+                    return $"{Realni}-j";               
+                case 0:
+                    return Realni.ToString();
+                default:
                     return $"{Realni}+{Imaginarni}j";
-            return $"{Realni}{Imaginarni}j";
+            }
         }
-        //za DZ rješiti što kad je 0, manji od nula itd.
-        // riješiti sa nekoliko if-ova
     }
 
-    // TODO:010 Pokrenuti program i pogledati ispise instanci strukture KompleksniBroj.
+    // :010 Pokrenuti program i pogledati ispise instanci strukture KompleksniBroj.
     class ToString
     {
-        // TODO:012 Pokrenuti program i usporediti ispise s očekivanima.
+        // :012 Pokrenuti program i usporediti ispise s očekivanima.
 
-        // TODO:013 Pokrenuti testove u grupi TestToString i provjeriti prolaze li svi testovi.
+        // :013 Pokrenuti testove u grupi TestToString i provjeriti prolaze li svi testovi.
         static void Main(string[] args)
         {
             KompleksniBroj kb = new KompleksniBroj(2, 3);

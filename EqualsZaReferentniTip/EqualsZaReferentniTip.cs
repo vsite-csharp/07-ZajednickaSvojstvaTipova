@@ -31,10 +31,10 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             return ime.GetHashCode() ^ matičniBroj.GetHashCode();
         }
 
-        object ICloneable.Clone()
-        {
-            return new Osoba(ime, matičniBroj);
-        }
+        //object ICloneable.Clone()
+        //{
+        //    return new Osoba(ime, matičniBroj);
+        //}
 
         public Osoba Clone()
         {
