@@ -22,7 +22,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 
         public bool Equals(Osoba other)
         {
-            if (other==null)
+            if (other is null)
             {
                 return false;
             }
