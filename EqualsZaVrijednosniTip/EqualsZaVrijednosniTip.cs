@@ -6,7 +6,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
     public class EqualsZaVrijednosniTip
     {
         // TODO:051 Definirati da struktura Osoba implementira sučelje IEquatable<Osoba>
-        public struct Osoba
+        public struct Osoba : IEquatable<Osoba>
         {
             public Osoba(string ime, int matičniBroj)
             {
@@ -18,10 +18,23 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             int matičniBroj;
 
             // TODO:052 Implementirati metodu Equals(Osoba) iz sučelja IEquatable<Osoba> tako da za osobe s istim matičnim brojem rezultat bude true (bez obzira na ime)
-
+            public bool Equals(Osoba other)
+            {
+                if (!object.Equals(matičniBroj, other.matičniBroj))
+                    return false;
+                if (!matičniBroj.Equals(other.matičniBroj))
+                    return false;
+                //return matičniBroj.Equals(other.matičniBroj);
+                return true;
+            }
 
             // TODO:053 Nadglasati (override) metodu Equals(object) tako da poziva Equals(Osoba)
-
+            public override bool Equals(object obj)
+            {
+                if (!(obj is Osoba))
+                    return false;
+                return Equals((Osoba)obj);
+            }
 
             public override string ToString()
             {
@@ -32,6 +45,19 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             {
                 ime = novoIme;
             }
+
+            public static bool operator ==(Osoba o1,
+                              Osoba o2)
+            {
+                return o1.Equals(o2);
+            }
+
+            public static bool operator !=(Osoba o1,
+                                          Osoba o2)
+            {
+                return !(o1 == o2);
+            }
+
         }
 
         public static void UsporedbaOsoba(Osoba osobaA, Osoba osobaB)

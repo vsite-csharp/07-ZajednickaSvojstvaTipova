@@ -14,7 +14,44 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         public double Imaginarni;
 
         // TODO:011 Nadglasati (override) metodu ToString tako da vraća niz u obliku: "2+3j", "2-j", "0", "j", "-j".
-        
+        public override string ToString()
+        {
+            if (Imaginarni < 0)
+            {
+                if (Imaginarni == -1)  {
+                    if (Realni == 0)
+                    {
+                        return $"-j";
+                    }
+                    return $"{Realni}-j";
+                }
+                
+                return $"{Realni}{Imaginarni}j";
+            }
+            else if (Imaginarni > 0)
+            {
+                if (Imaginarni == 1)  {
+                    if (Realni == 0)
+                    {
+                        return $"j";
+                    }
+                    return $"{Realni}+j";
+                }
+                
+                return $"{Realni}+{Imaginarni}j";
+            }
+            else
+            {
+                if(Realni == 0 && Imaginarni == 0)
+                {
+                    return $"{0}";
+                }
+                return $"{Realni}";
+            }
+           
+       
+
+        }// napraviti ispise bez nula prikazanih, samo j ili nista
 
     }
 
@@ -29,7 +66,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             KompleksniBroj kb = new KompleksniBroj(2, 3);
             Console.WriteLine(kb); // "2+3j"
 
-            kb.Imaginarni = -3;
+            kb.Imaginarni = -1;
             Console.WriteLine(kb); // "2-3j"
 
             kb.Realni = 0;
