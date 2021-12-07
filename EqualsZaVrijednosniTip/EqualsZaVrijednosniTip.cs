@@ -30,7 +30,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             // :053 Nadglasati (override) metodu Equals(object) tako da poziva Equals(Osoba)
             public override bool Equals(Object obj)
             {
-                return (this.Equals(obj));
+                return this.Equals((Osoba)obj);
             }
 
             public override string ToString()
