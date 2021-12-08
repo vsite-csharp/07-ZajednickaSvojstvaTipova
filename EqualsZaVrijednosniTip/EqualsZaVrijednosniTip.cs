@@ -20,17 +20,30 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             // :052 Implementirati metodu Equals(Osoba) iz sučelja IEquatable<Osoba> tako da za osobe s istim matičnim brojem rezultat bude true (bez obzira na ime)
             public bool Equals(Osoba osoba)
             {
-                if (GetType() != osoba.GetType())
+                if (!object.Equals(ime, osoba.ime))
                     return false;
-                if (ime != osoba.ime)
+                if (!matičniBroj.Equals(osoba.matičniBroj))
                     return false;
-                return matičniBroj == osoba.matičniBroj;
+                return true;
+
             }
 
             // :053 Nadglasati (override) metodu Equals(object) tako da poziva Equals(Osoba)
             public override bool Equals(Object obj)
             {
-                return this.Equals((Osoba)obj);
+                if (!(obj is Osoba))
+                    return false;
+                return Equals((Osoba)obj);
+
+            }
+            public static bool operator==(Osoba ob1, Osoba ob2)
+            {
+                return ob1.Equals(ob2);
+            }
+
+            public static bool operator !=(Osoba ob1, Osoba ob2)
+            {
+                return !(ob1 == ob2);
             }
 
             public override string ToString()
@@ -53,7 +66,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             Console.WriteLine(osobaB.Equals(osobaA));
         }
 
-        // TODO:050 Pokrenuti program i pogledati ispis.
+        // :050 Pokrenuti program i pogledati ispis.
         static void Main(string[] args)
         {
             // dvije osobe s različitim imenima i MB

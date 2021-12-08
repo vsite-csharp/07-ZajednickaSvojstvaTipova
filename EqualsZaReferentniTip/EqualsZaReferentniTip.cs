@@ -48,6 +48,16 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             return this.Equals(obj as Osoba);
         }
 
+        public static bool operator==(Osoba ob1, Osoba ob2)
+        {
+            return Equals(ob1, ob2);
+        }
+
+        public static bool operator !=(Osoba ob1, Osoba ob2)
+        {
+            return !(ob1 == ob2);
+        }
+
         public override int GetHashCode()
         {
             //mora biti simetricna Equalsu tj sto tamo usporedujemo to mora utjecati na gethashcode
