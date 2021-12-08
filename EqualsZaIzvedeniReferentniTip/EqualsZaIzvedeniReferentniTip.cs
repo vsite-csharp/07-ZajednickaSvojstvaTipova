@@ -3,8 +3,8 @@ using System.Diagnostics;
 
 namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
-    // TODO:041 Definirati da klasa Student implementira sučelje IEquatable<Student>
-    class Student : Osoba
+    // 041 Definirati da klasa Student implementira sučelje IEquatable<Student>
+    class Student : Osoba, IEquatable<Student>
     {
         public Student(string ime, int matičniBroj, string smjer, int godina) : base(ime, matičniBroj)
         {
@@ -15,16 +15,25 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         string smjer;
         int godina;
 
-        // TODO:042 Implementirati metodu Equals(Student) iz sučelja IEquatable<Student> da uključi dodatne usporedbe da bi studenti bili jednaki samo ako su na istom smjeru i godini.
+        // 042 Implementirati metodu Equals(Student) iz sučelja IEquatable<Student> da uključi dodatne usporedbe da bi studenti bili jednaki samo ako su na istom smjeru i godini.
 
+        public bool Equals(Student other)
+        {
+            return ((this.smjer == other.smjer) && (this.godina == other.godina) && this.Equals(other as Osoba)) ;
+        }
 
-        // TODO:043 Nadglasati (override) metodu Equals(object) tako da poziva metodu Equals(Student).
-
+        // 043 Nadglasati (override) metodu Equals(object) tako da poziva metodu Equals(Student).
+        public override bool Equals(object obj)
+        {
+            return Equals(obj as Student);
+        }
 
         public override string ToString()
         {
             return $"{base.ToString()} ({smjer} {godina}.godina)";
         }
+
+
     }
 
     class EqualsZaIzvedeniReferentiTip
@@ -55,7 +64,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 
         }
 
-        // TODO:040 Pokrenuti program i pogledati ispis.
+        // 040 Pokrenuti program i pogledati ispis.
         static void Main(string[] args)
         {
             // dva različita studenta
