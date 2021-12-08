@@ -42,6 +42,21 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             return matičniBroj.Equals(other.matičniBroj); //ili matičniBroj == other.matičniBroj;
         }
 
+        public static bool operator ==(Osoba osob1, Osoba osob2)
+        {
+            //if ((osob1 == null) || (osob2 == null))
+            //{
+            //    return false;
+            //}
+            //return ((osob1.ime == osob2.ime) && (osob1.matičniBroj == osob2.matičniBroj));
+            return Equals(osob1, osob2);
+        }
+
+        public static bool operator !=(Osoba osob1, Osoba osob2)
+        {
+            return !(osob1 == osob2);
+        }
+
         public override string ToString()
         {
             return $"'{ime}, {matičniBroj}'";
@@ -56,7 +71,6 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         {
             return this.Equals(obj as Osoba);//probat ce castati, ako ne ide vratiti ce null referencu
             //ovaj Equals, zove gornji overridani Equals
-
         }
 
         public override int GetHashCode()
