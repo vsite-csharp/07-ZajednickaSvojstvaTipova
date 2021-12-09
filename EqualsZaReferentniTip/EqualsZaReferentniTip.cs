@@ -57,6 +57,10 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         {
             return new Osoba(ime,matičniBroj);
         }
+        public Osoba Clone()
+        {
+            return new Osoba(ime, matičniBroj);
+        }
     }
     
 
