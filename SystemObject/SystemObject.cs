@@ -56,12 +56,12 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             MojaKlasa mk3 = new MojaKlasa();
 
             // :008 Otkomentirati donje naredbe i ispisati na konzolu rezultate usporedbi.
-            Console.WriteLine(mk1.Equals(mk2));
-            Console.WriteLine(mk1.Equals(mk3));
-            Console.WriteLine(mk2.Equals(mk1));
-            Console.WriteLine(mk2.Equals(mk3));
-            Console.WriteLine(mk3.Equals(mk1));
-            Console.WriteLine(mk3.Equals(mk2));
+            Console.WriteLine(mk1.Equals(mk2)); //True
+            Console.WriteLine(mk1.Equals(mk3)); //False
+            Console.WriteLine(mk2.Equals(mk1)); //True
+            Console.WriteLine(mk2.Equals(mk3)); //False
+            Console.WriteLine(mk3.Equals(mk1)); //False
+            Console.WriteLine(mk3.Equals(mk2)); //False
         }
 
         static void Main(string[] args)

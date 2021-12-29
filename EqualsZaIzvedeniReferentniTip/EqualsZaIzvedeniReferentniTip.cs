@@ -3,8 +3,8 @@ using System.Diagnostics;
 
 namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
-    // TODO:041 Definirati da klasa Student implementira sučelje IEquatable<Student>
-    class Student : Osoba
+    // :041 Definirati da klasa Student implementira sučelje IEquatable<Student>
+    class Student : Osoba, IEquatable<Student>
     {
         public Student(string ime, int matičniBroj, string smjer, int godina) : base(ime, matičniBroj)
         {
@@ -15,11 +15,33 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         string smjer;
         int godina;
 
-        // TODO:042 Implementirati metodu Equals(Student) iz sučelja IEquatable<Student> da uključi dodatne usporedbe da bi studenti bili jednaki samo ako su na istom smjeru i godini.
+        // :042 Implementirati metodu Equals(Student) iz sučelja IEquatable<Student> da uključi dodatne usporedbe da bi studenti bili jednaki samo ako su na istom smjeru i godini.
+        public bool Equals(Student other)
+        {
+            if (!base.Equals(other))
+            {
+                return false;
+            }
+            if (other == null)
+            {
+                return false;
+            }
+            if (this.GetType() != other.GetType())
+            {
+                return false;
+            }
+            if (!Equals(smjer, other.smjer))
+            {
+                return false;
+            }
+            return godina.Equals(other.godina);
+        }
 
-
-        // TODO:043 Nadglasati (override) metodu Equals(object) tako da poziva metodu Equals(Student).
-
+        // :043 Nadglasati (override) metodu Equals(object) tako da poziva metodu Equals(Student).
+        public override bool Equals(object obj)
+        {
+            return this.Equals(obj as Student);
+        }
 
         public override string ToString()
         {
@@ -55,7 +77,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 
         }
 
-        // TODO:040 Pokrenuti program i pogledati ispis.
+        // :040 Pokrenuti program i pogledati ispis.
         static void Main(string[] args)
         {
             // dva različita studenta
@@ -68,18 +90,18 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 
             // novi "Janko" s istim matičnim brojem, isti smjer i godina
             studentB = new Student("Janko", 1, "Programiranje", 3);
-            UsporedbaStudenata(studentA, studentB);
+            UsporedbaStudenata(studentA, studentB); 
 
             Console.WriteLine();
 
             // "Janko", ali na drugoj godini
             studentB = new Student("Janko", 1, "Programiranje", 2);
-            UsporedbaStudenata(studentA, studentB);
+            UsporedbaStudenata(studentA, studentB); 
 
             Console.WriteLine();
 
             studentA = studentB;
-            UsporedbaStudenata(studentA, studentB);
+            UsporedbaStudenata(studentA, studentB); 
 
             Console.WriteLine("\nGOTOVO!!!");
             Console.ReadKey();

@@ -15,11 +15,34 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         string ime;       // član referentnog tipa
         int matičniBroj;  // član vrijednosnog tipa
 
-        // :032 Implementirati metodu Equals(Osoba) iz sučelja IEquatable<Osoba> tako da za osobe s istim imenom i istim matičnim brojem rezultat bude true
-
+        // :032 Implementirati metodu Equals(Osoba) iz sučelja IEquatable<Osoba> tako da za osobe s istim imenom i istim matičnim brojem rezultat bude true      
+        public bool Equals(Osoba other)
+        {
+            if (other == null)
+            {
+                return false;
+            }
+            if (GetType() != other.GetType())
+            {
+                return false;
+            }
+            if (!Equals(ime, other.ime))
+            {
+                return false;
+            }
+            return matičniBroj.Equals(other.matičniBroj); // matičniBroj == other.MatičniBroj -> ista stvar
+        }
 
         // :033 Nadglasati (override) metodu Equals(object) tako da poziva Equals(Osoba)
+        public override bool Equals(object obj)
+        {
+            return this.Equals(obj as Osoba);
+        }
 
+        public override int GetHashCode()
+        {
+            return ime.GetHashCode() ^ matičniBroj.GetHashCode();
+        }
 
         public override string ToString()
         {
@@ -31,33 +54,6 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             ime = novoIme;
         }
 
-        public bool Equals(Osoba other)
-        {
-            if(other == null)
-            {
-                return false;
-            }
-            if(GetType() != other.GetType())
-            {
-                return false;
-            }
-            if(!Equals(ime, other.ime))
-            {
-                return false;
-            }
-            return matičniBroj.Equals(other.matičniBroj); // matičniBroj == other.MatičniBroj -> ista stvar
-        }
-
-        public override bool Equals(object obj)
-        {
-            return this.Equals(obj as Object);
-        }
-
-        public override int GetHashCode()
-        {
-            return ime.GetHashCode() ^ matičniBroj.GetHashCode();
-        }
-
         object ICloneable.Clone()
         {
             return new Osoba(ime, matičniBroj);
@@ -67,6 +63,17 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         public Osoba Clone()
         {
             return new Osoba(ime, matičniBroj);
+        }
+
+        //JednakostZaReferentniTip
+        public static bool operator == (Osoba o1, Osoba o2)
+        {
+            return Equals(o1, o2);
+        }
+
+        public static bool operator !=(Osoba o1, Osoba o2)
+        {
+            return !Equals(o1, o2);
         }
     }
 
