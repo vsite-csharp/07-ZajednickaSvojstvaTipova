@@ -2,5 +2,6 @@
 {
     internal interface IClonable
     {
+        bool Equals(Osoba other);
     }
 }

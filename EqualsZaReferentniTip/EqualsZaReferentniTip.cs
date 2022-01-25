@@ -4,7 +4,7 @@ using System.Diagnostics;
 namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     // :031 Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
-    public class Osoba : IEquatable<Osoba> , IClonable
+    public class Osoba : IEquatable<Osoba>, ICloneable
     {
         public Osoba(string ime, int matičniBroj)
         {
@@ -15,12 +15,12 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         string ime;       // član referentnog tipa
         int matičniBroj;  // član vrijednosnog tipa
 
-        // TODO: Implementirati metodu Equals(Osoba) iz sučelja IEquatable<Osoba> tako da za osobe s istim imenom i istim matičnim brojem rezultat bude true
+        // TODO:32 Implementirati metodu Equals(Osoba) iz sučelja IEquatable<Osoba> tako da za osobe s istim imenom i istim matičnim brojem rezultat bude true
 
 
-        // TODO: Nadglasati (override) metodu Equals(object) tako da poziva Equals(Osoba)
+        // TODO:33 Nadglasati (override) metodu Equals(object) tako da poziva Equals(Osoba)
 
-
+        
         public override string ToString()
         {
             return $"'{ime}, {matičniBroj}'";
@@ -38,8 +38,10 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             if (GetType() != other.GetType())
                 return false;
             if (!Equals(ime, other.ime))
+            {
                 return false;
-            return matičniBroj.Equals(other.matičniBroj); //matičniBroj==other.matičniBroj
+            }
+            return matičniBroj.Equals(other.matičniBroj);
         }
 
         public override bool Equals(object obj)
@@ -52,7 +54,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             return ime.GetHashCode() ^ matičniBroj.GetHashCode();
         }
 
-        object IClonable.Clone()
+        object ICloneable.Clone()
         {
             return new Osoba(ime, matičniBroj);
         }
@@ -61,6 +63,8 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         {
             return new Osoba(ime, matičniBroj);
         }
+
+        
     }
 
     class EqualsZaReferentniTip
