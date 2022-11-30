@@ -21,6 +21,13 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova.Testovi
         }
 
         [TestMethod]
+        public void VraćaTekstZaKompleksniBrojSRealnimBrojemIImaginarnomJedinicom()
+        {
+            KompleksniBroj kb = new KompleksniBroj(2, 1);
+            Assert.AreEqual("2+j", kb.ToString());
+        }
+
+        [TestMethod]
         public void VraćaTekstZaKompleksniBrojSRealnimBrojemINegativnomImaginarnomJedinicom()
         {
             KompleksniBroj kb = new KompleksniBroj(2, -1);

@@ -48,6 +48,14 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             kb.Realni = -2;
             Console.WriteLine(kb); // "-2"
 
+            kb.Imaginarni = -1;
+            kb.Realni = -2;
+            Console.WriteLine(kb); // "-2-j"
+
+            kb.Imaginarni = 1;
+            kb.Realni = 2;
+            Console.WriteLine(kb); // "2+j"
+
             Console.WriteLine("\nGOTOVO!!!");
             Console.ReadKey();
         }
