@@ -4,7 +4,7 @@ using System.Diagnostics;
 namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     // TODO:031 Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
-    public class Osoba
+    public class Osoba : IEquatable<Osoba>
     {
         public Osoba(string ime, int matičniBroj)
         {
@@ -19,16 +19,38 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 
 
         // TODO:033 Nadglasati (override) metodu Equals(object) tako da poziva Equals(Osoba)
-
+        
 
         public override string ToString()
         {
             return $"'{ime}, {matičniBroj}'";
         }
-
+       
         public void PromijeniIme(string novoIme)
         {
             ime = novoIme;
+        }
+
+        public override bool Equals(object? obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            if (obj.GetType()!=typeof(Osoba))
+            {
+                return false;
+            }
+            return Equals((Osoba)obj);
+        }
+        public bool Equals(Osoba? other)
+        {
+            if (other == null)
+            {
+                return false;
+            }
+            return ime == other.ime && matičniBroj == other.matičniBroj;
+            
         }
     }
 
