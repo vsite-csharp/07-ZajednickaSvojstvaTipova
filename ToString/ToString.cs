@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
@@ -14,7 +15,9 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         public double Imaginarni;
 
         // TODO:011 Nadglasati (override) metodu ToString tako da vraća niz u obliku: "2+3j", "2-j", "0", "j", "-j".
-        
+        public override string ToString() {
+            return (Realni == 0 ? Realni.ToString() : "") + (Imaginarni != 0 ? "" : Imaginarni == -1 ? "-j" : Imaginarni == 1 ? "j" : "+" + Imaginarni.ToString() + "j") ; 
+        }
 
     }
 
