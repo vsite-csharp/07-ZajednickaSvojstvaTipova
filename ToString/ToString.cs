@@ -16,19 +16,19 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         //011 Nadglasati (override) metodu ToString tako da vraća niz u obliku: "2+3j", "2-j", "0", "j", "-j".
         public override string ToString()
         {
-            if(this.Realni <=0 %% this.Imaginarni > 0)
+            if(this.Realni <=0 && this.Imaginarni != 0)
             {
                 return String.Format("{0}j", this.Imaginarni);
             }
-            else if(this.Imaginarni <= 0 && this.Realni > 0)
+            else if(this.Imaginarni <= 0 && this.Realni != 0)
             {
                 return String.Format("{0}", this.Realni);
             }
-            else if(this.Imaginarni > 0 and this.Realni > 0)
+            else
             {
                 return String.Format("{0}+{1}j", this.Realni);
             }
-
+            
             
         }
 
