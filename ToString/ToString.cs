@@ -17,7 +17,52 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 
         public override string ToString()
         {
-            return base.ToString();
+            string returnValue = "";
+
+            if (Realni == 0 && Imaginarni == 0)
+            {
+                returnValue += "0";
+            }
+
+            else if (Realni == 0 && Imaginarni != 0)
+            {
+                if (Imaginarni < -1)
+                   returnValue += $"{Imaginarni}j";
+
+                else if (Imaginarni > 1)
+                    returnValue += $"{Imaginarni}j";
+
+               else if (Imaginarni == -1)
+                    returnValue += "-j";
+
+                else if (Imaginarni == 1)
+                    returnValue += "j" ;
+            }
+
+            else if (Realni != 0 && Imaginarni == 0)
+            {
+                returnValue += $"{Realni}";
+            }
+
+            else if (Realni != 0 && Imaginarni != 0)
+            {
+                returnValue += Realni;
+
+                if (Imaginarni < -1)
+                    returnValue += $"{Imaginarni}j";
+
+                else if (Imaginarni > 1)
+                    returnValue += $"+{Imaginarni}j";
+
+                else if (Imaginarni == -1)
+                    returnValue += "-j";
+
+                else if (Imaginarni == 1)
+                    returnValue += "+j";
+
+            }
+
+            return returnValue;
         }
         
             
