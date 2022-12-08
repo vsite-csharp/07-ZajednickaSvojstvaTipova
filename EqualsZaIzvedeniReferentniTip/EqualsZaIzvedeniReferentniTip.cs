@@ -21,12 +21,14 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 			return this.smjer == other.smjer && this.godina == other.godina;
 		}
 
-        // 043 Nadglasati (override) metodu Equals(object) tako da poziva metodu Equals(Student).
-        public bool Equals(Object? other)
-        {
-            return Equals(other as Student);
-        }
-        public override string ToString()
+		// 043 Nadglasati (override) metodu Equals(object) tako da poziva metodu Equals(Student).
+		public override bool Equals(Object? other)
+		{
+			if (other != null)
+				return Equals((Student)other);
+			return false;
+		}
+		public override string ToString()
 		{
 			return $"{base.ToString()} ({smjer} {godina}.godina)";
 		}
