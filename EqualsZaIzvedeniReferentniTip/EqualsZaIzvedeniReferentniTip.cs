@@ -4,7 +4,7 @@ using System.Diagnostics;
 namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     // TODO:041 Definirati da klasa Student implementira sučelje IEquatable<Student>
-    class Student : Osoba
+    class Student : Osoba, IEquatable<Student>
     {
         public Student(string ime, int matičniBroj, string smjer, int godina) : base(ime, matičniBroj)
         {
@@ -24,6 +24,32 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         public override string ToString()
         {
             return $"{base.ToString()} ({smjer} {godina}.godina)";
+        }
+
+        public bool Equals(Student? other)
+        {
+            if (other== null)
+            {
+                return false;
+            }
+            if (smjer==other.smjer && godina ==other.godina)
+            {
+                return false;
+            }
+            return base.Equals(other);
+        }
+
+        public override bool Equals(object? obj)
+        {
+            if (obj==null)
+            {
+                return false;
+            }
+            if (GetType() != obj.GetType())
+            {
+                return false;
+            }
+            return Equals((Osoba)obj);
         }
     }
 
@@ -55,7 +81,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 
         }
 
-        // TODO:040 Pokrenuti program i pogledati ispis.
+        // Pokrenuti program i pogledati ispis.
         static void Main(string[] args)
         {
             // dva različita studenta
