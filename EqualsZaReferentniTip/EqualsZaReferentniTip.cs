@@ -32,17 +32,34 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             ime = novoIme;
         }
 
-        bool IEquatable<Osoba>.Equals(Osoba? other)
+        
+        public override bool Equals(object? obj)
         {
-            if (ime == other.ime && other.matičniBroj == matičniBroj) {
+            if (obj == null)
+                return false;
+            if (obj.GetType() != this.GetType())
+                return false;
+            return Equals((Osoba)obj);
+        }
+        public bool Equals(Osoba? other)
+        {
+            if (other == null){
+                return false;
+            }
+            if (this.ime == other.ime && other.matičniBroj == this.matičniBroj)
+            {
                 return true;
             }
             return false;
         }
 
-        public override bool Equals(object? obj)
+
+        public static bool operator ==(Osoba A, Osoba B) {
+            return Equals(A, B);
+        }
+        public static bool operator !=(Osoba A, Osoba B)
         {
-            return base.Equals(obj);
+            return !Equals(A, B);
         }
     }
 
