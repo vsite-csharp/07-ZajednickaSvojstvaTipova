@@ -75,7 +75,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             return !(a==b);
         }
     }
-
+     
     class EqualsZaReferentniTip
     {
         public static void UsporedbaOsoba(Osoba osobaA, Osoba osobaB)
