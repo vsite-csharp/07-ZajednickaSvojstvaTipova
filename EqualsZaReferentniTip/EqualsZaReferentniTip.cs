@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Diagnostics;
 
 namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     // TODO:031 Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
-    public class Osoba
+    public class Osoba : IEnumerable<Osoba>
     {
         public Osoba(string ime, int matičniBroj)
         {
@@ -29,6 +30,16 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         public void PromijeniIme(string novoIme)
         {
             ime = novoIme;
+        }
+
+        public IEnumerator<Osoba> GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            throw new NotImplementedException();
         }
     }
 
