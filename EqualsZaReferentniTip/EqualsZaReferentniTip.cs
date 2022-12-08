@@ -43,6 +43,11 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             if (other == null) return false;
             return ime == other.ime && matičniBroj == other.matičniBroj;
         }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(ime, matičniBroj);
+        }
     }
 
     class EqualsZaReferentniTip
