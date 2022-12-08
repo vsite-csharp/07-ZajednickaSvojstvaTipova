@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
-    // TODO:090 Pokrenuti program i provjeriti ispis.
+    //090 Pokrenuti program i provjeriti ispis.
 
-    // TODO:091 Implementirati metodu GetHashCode u klasi Osoba iz projekta MetodaEqualsZaReferentiTip tako da se metoda Main može izvesti bez problema
+    //091 Implementirati metodu GetHashCode u klasi Osoba iz projekta MetodaEqualsZaReferentiTip tako da se metoda Main može izvesti bez problema
 
     class GetHashCode
     {
@@ -24,7 +24,6 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 
             Console.WriteLine("\nGOTOVO!!!");
             Console.ReadKey();
-
         }
     }
 }

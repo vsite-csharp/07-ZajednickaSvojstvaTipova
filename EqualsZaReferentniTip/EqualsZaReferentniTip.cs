@@ -47,6 +47,11 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             }
             return ime == other.ime && matičniBroj == other.matičniBroj;
         }
+
+        public override int GetHashCode()
+        {
+            return ime.GetHashCode() ^ matičniBroj.GetHashCode();
+        }
     }
 
     class EqualsZaReferentniTip
