@@ -45,6 +45,16 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
                 if (GetType() != obj.GetType()) return false;
                 return Equals((Osoba)obj);
             }
+
+            public static bool operator ==(Osoba a, Osoba b)
+            {
+                return Equals(a, b);
+            }
+
+            public static bool operator !=(Osoba a, Osoba b)
+            {
+                return !Equals(a, b);
+            }
         }
 
         public static void UsporedbaOsoba(Osoba osobaA, Osoba osobaB)
