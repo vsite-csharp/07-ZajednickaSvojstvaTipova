@@ -2,7 +2,7 @@
 
 namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
-    class MojaKlasa
+    class MojaPrvaKlasa
     {
     }
 
@@ -14,14 +14,14 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
     {
         public static void UsporedbaKlasa()
         {
-            MojaKlasa mk1 = new MojaKlasa();
-            MojaKlasa mk2 = null;
+            MojaPrvaKlasa mk1 = new MojaPrvaKlasa();
+            MojaPrvaKlasa mk2 = null;
 
             // TODO:020 Usporediti objekte mk1 i mk2 korištenjem statičke metode MojaKlasa.Equals te ispisati rezultat
-            Console.WriteLine(MojaKlasa.Equals(mk1, mk2));
+            Console.WriteLine(MojaPrvaKlasa.Equals(mk1, mk2));
 
             // TODO:021 Usporediti reference na objekte mk1 i mk2 korištenjem statičke metode MojaKlasa.ReferenceEquals te ispisati rezultat
-            Console.WriteLine(MojaKlasa.ReferenceEquals(mk1, mk2));
+            Console.WriteLine(MojaPrvaKlasa.ReferenceEquals(mk1, mk2));
 
             // TODO:022 Usporediti objekte mk1 i mk2 pozivom metode mk1.Equals te ispisati rezultat
             Console.WriteLine(mk1.Equals(mk2));
