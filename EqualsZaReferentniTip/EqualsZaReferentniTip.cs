@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
-    // TODO:031 Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
+    //031 Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
     public class Osoba : IEquatable<Osoba>
     {
         public Osoba(string ime, int matičniBroj)
@@ -20,7 +20,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 
         //033 Nadglasati (override) metodu Equals(object) tako da poziva Equals(Osoba)
 
-
+         
         public override string ToString()
         {
             return $"'{ime}, {matičniBroj}'";
