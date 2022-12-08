@@ -18,15 +18,23 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 		// 042 Implementirati metodu Equals(Student) iz sučelja IEquatable<Student> da uključi dodatne usporedbe da bi studenti bili jednaki samo ako su na istom smjeru i godini.
 		public bool Equals(Student? other)
 		{
-			return this.smjer == other.smjer && this.godina == other.godina;
+			if (other != null)
+				return false;
+			if (this.smjer != other.smjer && this.godina != other.godina)
+			{
+				return false;
+			}
+			return base.Equals(other);
 		}
 
 		// 043 Nadglasati (override) metodu Equals(object) tako da poziva metodu Equals(Student).
 		public override bool Equals(Object? other)
 		{
-			if (other != null)
-				return Equals((Student)other);
-			return false;
+			if (other == null)
+				return false;
+			if(GetType() != other.GetType())
+				return false;
+			return base.Equals((Student)other);
 		}
 		public override string ToString()
 		{
