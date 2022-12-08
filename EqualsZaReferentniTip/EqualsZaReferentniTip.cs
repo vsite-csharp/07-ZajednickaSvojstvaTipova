@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 
 namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     // TODO:031 Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
 
-    public class Osoba : IEquatable<Osoba>
+    public class Osoba : IEquatable<Osoba>, ICloneable
     {
         public Osoba(string ime, int matičniBroj)
         {
@@ -51,9 +52,19 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
                 return true;
             }
             return false;
+            
         }
 
+        public override int GetHashCode()
+        {
+            return matičniBroj;
+        }
 
+        public object Clone()
+        {
+            return (Osoba)new Osoba(this.ime, this.matičniBroj);
+        }
+        
         public static bool operator ==(Osoba A, Osoba B) {
             return Equals(A, B);
         }
@@ -61,6 +72,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         {
             return !Equals(A, B);
         }
+
     }
 
     class EqualsZaReferentniTip

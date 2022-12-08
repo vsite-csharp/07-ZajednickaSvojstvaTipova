@@ -17,10 +17,6 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             string ime;
             int matičniBroj;
 
-            // TODO:052 Implementirati metodu Equals(Osoba) iz sučelja IEquatable<Osoba> tako da za osobe s istim matičnim brojem rezultat bude true (bez obzira na ime)
-
-
-            // TODO:053 Nadglasati (override) metodu Equals(object) tako da poziva Equals(Osoba)
 
 
             public override string ToString()
@@ -35,11 +31,15 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 
             public bool Equals(Osoba other)
             {
-                if (this.ime == other.ime && this.matičniBroj == other.matičniBroj) {
+                if (this.matičniBroj == other.matičniBroj) {
                     return true;
                 }
                 return false;
             }
+
+            // TODO:052 Implementirati metodu Equals(Osoba) iz sučelja IEquatable<Osoba> tako da za osobe s istim matičnim brojem rezultat bude true (bez obzira na ime)
+            // TODO:053 Nadglasati (override) metodu Equals(object) tako da poziva Equals(Osoba)
+
 
             public override bool Equals(Object obj) {
                 if (obj == null)
@@ -50,6 +50,14 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
                     return false;
                 }
                 return Equals((Osoba)obj);
+            }
+
+            public static bool operator ==(Osoba A, Osoba B) {
+                return Equals(A, B);
+            }
+            public static bool operator !=(Osoba A, Osoba B)
+            {
+                return !Equals(A, B);
             }
         }
 
