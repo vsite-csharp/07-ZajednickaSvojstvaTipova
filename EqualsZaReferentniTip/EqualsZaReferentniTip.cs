@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Data.Common;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 
 namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     // TODO:031 Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
-    public class Osoba : IEquatable<Osoba>
+    public class Osoba : IEquatable<Osoba>, ICloneable
     {
         public Osoba(string ime, int matičniBroj)
         {
@@ -58,6 +60,26 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         public override int GetHashCode()
         {
             return ime.GetHashCode() ^ matičniBroj.GetHashCode();
+        }
+
+        object ICloneable.Clone()
+        {
+            return new Osoba(ime, matičniBroj);
+        }
+
+        public Osoba Clone()
+        {
+            return new Osoba(ime, matičniBroj);
+        }
+        
+        static public bool operator==(Osoba a, Osoba b)
+        {
+            return Equals(a, b);
+        }
+
+        static public bool operator!=(Osoba a, Osoba b)
+        {
+            return !Equals(a, b);
         }
     }
 
