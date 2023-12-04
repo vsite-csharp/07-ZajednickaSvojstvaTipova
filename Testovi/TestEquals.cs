@@ -18,10 +18,10 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova.Testovi
             {
             }
 
-            Assert.AreEqual(false, cw.GetBoolean());
-            Assert.AreEqual(false, cw.GetBoolean());
-            Assert.AreEqual(false, cw.GetBoolean());
-            Assert.IsTrue(cw.IsEmpty);
+            Assert.AreEqual(false, cw?.GetBoolean());
+            Assert.AreEqual(false, cw?.GetBoolean());
+            Assert.AreEqual(false, cw?.GetBoolean());
+            Assert.IsTrue(cw?.IsEmpty);
         }
     }
 }

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-
-namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
+﻿namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     // TODO:041 Definirati da klasa Student implementira sučelje IEquatable<Student>
     class Student : Osoba
@@ -12,8 +9,8 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             this.godina = godina;
         }
 
-        string smjer;
-        int godina;
+        private readonly string smjer;
+        private readonly int godina;
 
         // TODO:042 Implementirati metodu Equals(Student) iz sučelja IEquatable<Student> da uključi dodatne usporedbe da bi studenti bili jednaki samo ako su na istom smjeru i godini.
 
@@ -27,7 +24,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         }
     }
 
-    class EqualsZaIzvedeniReferentiTip
+    static class EqualsZaIzvedeniReferentiTip
     {
         public static void UsporedbaStudenata(Student studentA, Student studentB)
         {
@@ -56,7 +53,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         }
 
         // TODO:040 Pokrenuti program i pogledati ispis.
-        static void Main(string[] args)
+        static void Main()
         {
             // dva različita studenta
             Student studentA = new Student("Janko", 1, "Programiranje", 3);
@@ -82,7 +79,6 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             UsporedbaStudenata(studentA, studentB);
 
             Console.WriteLine("\nGOTOVO!!!");
-            Console.ReadKey();
         }
     }
 }

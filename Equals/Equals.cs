@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
+﻿namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     class MojaKlasa
     {
@@ -10,12 +8,12 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
     {
     }
 
-    class MetodaEquals
+    static class MetodaEquals
     {
         public static void UsporedbaKlasa()
         {
-            MojaKlasa mk1 = new MojaKlasa();
-            MojaKlasa mk2 = null;
+            MojaKlasa? mk1 = new MojaKlasa();
+            MojaKlasa? mk2 = null;
 
             // TODO:020 Usporediti objekte mk1 i mk2 korištenjem statičke metode MojaKlasa.Equals te ispisati rezultat
 
@@ -49,7 +47,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 
         }
 
-        static void Main(string[] args)
+        static void Main()
         {
             Util.IspisNaslova("Usporedba klasa");
             UsporedbaKlasa();
@@ -60,7 +58,6 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             UsporedbaStruktura();
 
             Console.WriteLine("\nGOTOVO!!!");
-            Console.ReadKey();
         }
     }
 }

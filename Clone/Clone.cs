@@ -1,7 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-
-namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
+﻿namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     // TODO:101 Klasi Osoba iz projekta MetodaEqualsZaReferentiTip navesti da implementira sučelje ICloneable.
 
@@ -32,7 +29,6 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             Jednakost();
 
             Console.WriteLine("\nGOTOVO!!!");
-            Console.ReadKey();
         }
     }
 }

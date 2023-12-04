@@ -14,8 +14,8 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova.Testovi
             Osoba osobaA = new Osoba("Janko", 1);
             Osoba osobaB = osobaA;
             JednakostZaVrijedniTip.Jednakost(osobaA, osobaB);
-            Assert.IsTrue(cw.GetString().ToLower().EndsWith("true"));
-            Assert.IsTrue(cw.GetString().ToLower().EndsWith("false"));
+            Assert.IsTrue(cw?.GetString().ToLower().EndsWith("true"));
+            Assert.IsTrue(cw?.GetString().ToLower().EndsWith("false"));
         }
 
         [TestMethod]
@@ -24,8 +24,8 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova.Testovi
             Osoba osobaA = new Osoba("Janko", 1);
             Osoba osobaB = new Osoba("Janko", 1);
             JednakostZaVrijedniTip.Jednakost(osobaA, osobaB);
-            Assert.IsTrue(cw.GetString().ToLower().EndsWith("true"));
-            Assert.IsTrue(cw.GetString().ToLower().EndsWith("false"));
+            Assert.IsTrue(cw?.GetString().ToLower().EndsWith("true"));
+            Assert.IsTrue(cw?.GetString().ToLower().EndsWith("false"));
         }
 
         [TestMethod]
@@ -34,8 +34,8 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova.Testovi
             Osoba osobaA = new Osoba("Janko", 1);
             Osoba osobaB = new Osoba("Janko", 2);
             JednakostZaVrijedniTip.Jednakost(osobaA, osobaB);
-            Assert.IsTrue(cw.GetString().ToLower().EndsWith("false"));
-            Assert.IsTrue(cw.GetString().ToLower().EndsWith("true"));
+            Assert.IsTrue(cw?.GetString().ToLower().EndsWith("false"));
+            Assert.IsTrue(cw?.GetString().ToLower().EndsWith("true"));
         }
     }
 }

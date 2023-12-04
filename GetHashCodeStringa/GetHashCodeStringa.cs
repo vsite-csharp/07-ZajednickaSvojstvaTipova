@@ -1,10 +1,8 @@
-﻿using System;
-
-namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
+﻿namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
-    class GetHashCodeStringa
+    static class GetHashCodeStringa
     {
-        static void Main(string[] args)
+        static void Main()
         {
             // TODO:080 Pokrenuti program i usporediti ispise. Koja dva znakovna niza daju najbliže brojeve?
 
@@ -15,7 +13,6 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             Console.WriteLine($"cut.GetHashCode() = {"cut".GetHashCode()}");
 
             Console.WriteLine("\nGOTOVO!!!");
-            Console.ReadKey();
         }
     }
 }

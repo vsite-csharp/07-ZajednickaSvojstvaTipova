@@ -39,8 +39,8 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova.Testovi
         [TestMethod]
         public void UsporedbaDvijuOsobaSIstimImenimaRazličtitimMatičnimBrojemVraćaFalse()
         {
-            Osoba o1 = new Osoba("Janko", 1);
-            Osoba o2 = new Osoba("Janko", 2);
+            Osoba? o1 = new Osoba("Janko", 1);
+            Osoba? o2 = new Osoba("Janko", 2);
 
             Assert.IsTrue(typeof(Osoba).GetInterfaces().Contains(typeof(IEquatable<Osoba>)));
 
@@ -53,8 +53,8 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova.Testovi
         [TestMethod]
         public void UsporedbaSNullReferencomVraćaFalse()
         {
-            Osoba o1 = new Osoba("Janko", 1);
-            Osoba o2 = null;
+            Osoba? o1 = new Osoba("Janko", 1);
+            Osoba? o2 = null;
 
             Assert.IsTrue(typeof(Osoba).GetInterfaces().Contains(typeof(IEquatable<Osoba>)));
 
@@ -66,8 +66,8 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova.Testovi
         [TestMethod]
         public void UsporedbaDvijuOsobaSIstimImenimaIstimMatičnimBrojemVraćaTrue()
         {
-            Osoba o1 = new Osoba("Janko", 1);
-            Osoba o2 = new Osoba("Janko", 1);
+            Osoba? o1 = new Osoba("Janko", 1);
+            Osoba? o2 = new Osoba("Janko", 1);
 
             Assert.IsTrue(typeof(Osoba).GetInterfaces().Contains(typeof(IEquatable<Osoba>)));
 

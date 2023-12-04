@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
+﻿namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     // TODO:090 Pokrenuti program i provjeriti ispis.
 
     // TODO:091 Implementirati metodu GetHashCode u klasi Osoba iz projekta MetodaEqualsZaReferentiTip tako da se metoda Main može izvesti bez problema
 
-    class GetHashCode
+    static class GetHashCode
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Dictionary<Osoba, string> mjestaRođenja = new Dictionary<Osoba, string>();
             mjestaRođenja[new Osoba("Pero", 1)] = "Babina Greda";
@@ -23,8 +18,6 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             Console.WriteLine(mjestaRođenja[new Osoba("Darko", 3)]);
 
             Console.WriteLine("\nGOTOVO!!!");
-            Console.ReadKey();
-
         }
     }
 }

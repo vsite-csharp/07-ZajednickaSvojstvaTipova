@@ -1,19 +1,16 @@
-﻿using System;
-using System.Diagnostics;
-
-namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
+﻿namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     // TODO:031 Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
     public class Osoba
     {
-        public Osoba(string ime, int matičniBroj)
+        public Osoba(string? ime, int matičniBroj)
         {
             this.ime = ime;
             this.matičniBroj = matičniBroj;
         }
 
-        string ime;       // član referentnog tipa
-        int matičniBroj;  // član vrijednosnog tipa
+        private string? ime;               // član referentnog tipa
+        private readonly int matičniBroj;  // član vrijednosnog tipa
 
         // TODO:032 Implementirati metodu Equals(Osoba) iz sučelja IEquatable<Osoba> tako da za osobe s istim imenom i istim matičnim brojem rezultat bude true
 
@@ -32,16 +29,16 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         }
     }
 
-    class EqualsZaReferentniTip
+    static class EqualsZaReferentniTip
     {
-        public static void UsporedbaOsoba(Osoba osobaA, Osoba osobaB)
+        public static void UsporedbaOsoba(Osoba? osobaA, Osoba? osobaB)
         {
             Console.WriteLine(osobaA);
             Console.WriteLine(osobaB);
 
             try
             {
-                Console.WriteLine(osobaA.Equals(osobaB));
+                Console.WriteLine(osobaA?.Equals(osobaB));
             }
             catch (NullReferenceException)
             {
@@ -49,7 +46,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             }
             try
             {
-                Console.WriteLine(osobaB.Equals(osobaA));
+                Console.WriteLine(osobaB?.Equals(osobaA));
             }
             catch (NullReferenceException)
             {
@@ -63,7 +60,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         }
 
         // TODO:030 Pokrenuti program bez debuggera (Ctrl+F5) i pogledati ispis
-        static void Main(string[] args)
+        static void Main()
         {
             Util.IspisNaslova("Usporedba referenci na isti objekt");
             Osoba osobaA = new Osoba("Janko", 1);
@@ -100,7 +97,6 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             UsporedbaOsoba(osobaA, osobaB);
             
             Console.WriteLine("\nGOTOVO!!!");
-            Console.ReadKey();
         }
     }
 }

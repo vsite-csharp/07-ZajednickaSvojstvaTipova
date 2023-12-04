@@ -1,7 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-
-namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
+﻿namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     public class EqualsZaVrijednosniTip
     {
@@ -14,8 +11,8 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
                 this.matičniBroj = matičniBroj;
             }
 
-            string ime;
-            int matičniBroj;
+            private string ime;
+            private readonly int matičniBroj;
 
             // TODO:052 Implementirati metodu Equals(Osoba) iz sučelja IEquatable<Osoba> tako da za osobe s istim matičnim brojem rezultat bude true (bez obzira na ime)
 
@@ -44,7 +41,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         }
 
         // TODO:050 Pokrenuti program i pogledati ispis.
-        static void Main(string[] args)
+        static void Main()
         {
             // dvije osobe s različitim imenima i MB
             Osoba osobaA = new Osoba("Janko", 1);
@@ -70,7 +67,6 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             UsporedbaOsoba(osobaA, osobaB);
 
             Console.WriteLine("\nGOTOVO!!!");
-            Console.ReadKey();
         }
     }
 }

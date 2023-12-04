@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
+﻿namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     struct KompleksniBroj
     {
@@ -19,12 +17,12 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
     }
 
     // TODO:010 Pokrenuti program i pogledati ispise instanci strukture KompleksniBroj.
-    class ToString
+    static class ToString
     {
         // TODO:012 Pokrenuti program i usporediti ispise s očekivanima.
 
         // TODO:013 Pokrenuti testove u grupi TestToString i provjeriti prolaze li svi testovi.
-        static void Main(string[] args)
+        static void Main()
         {
             KompleksniBroj kb = new KompleksniBroj(2, 3);
             Console.WriteLine(kb); // "2+3j"
@@ -57,7 +55,6 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             Console.WriteLine(kb); // "2+j"
 
             Console.WriteLine("\nGOTOVO!!!");
-            Console.ReadKey();
         }
     }
 }

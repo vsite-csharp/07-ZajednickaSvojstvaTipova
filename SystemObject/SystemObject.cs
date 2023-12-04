@@ -1,11 +1,9 @@
-﻿using System;
-
-namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
+﻿namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     // TODO:000 Definirati klasu MojaKlasa bez ikakvih članova, samo s praznom definicijom.
 
 
-    class SystemObject
+    static class SystemObject
     {
         public static void IspisToString()
         {
@@ -56,7 +54,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             //Console.WriteLine(mk3.Equals(mk2));
         }
 
-        static void Main(string[] args)
+        static void Main()
         {
             Util.IspisNaslova("Ispis ToString:");
             IspisToString();
@@ -77,7 +75,6 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             IspisEquals();
 
             Console.WriteLine("\nGOTOVO!!!");
-            Console.ReadKey();
         }
     }
 }

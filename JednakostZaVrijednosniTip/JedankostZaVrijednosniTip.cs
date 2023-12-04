@@ -1,10 +1,8 @@
-﻿using System;
-
-namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
+﻿namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     using Osoba = EqualsZaVrijednosniTip.Osoba;
 
-    public class JednakostZaVrijedniTip
+    static public class JednakostZaVrijedniTip
     {
         public static void Jednakost(Osoba osobaA, Osoba osobaB)
         {
@@ -15,7 +13,7 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             // TODO:071 Strukturi Osoba u projektu MetodaEqualsZaVrijednosniTip definirati operatore == i != tako da donji primjeri daju očekivane rezultate.
         }
 
-        static void Main(string[] args)
+        static void Main()
         {
 
             // dvije osobe s različitim imenima i MB
@@ -33,7 +31,6 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
             Jednakost(osobaA, osobaB);
 
             Console.WriteLine("\nGOTOVO!!!");
-            Console.ReadKey();
         }
     }
 }
