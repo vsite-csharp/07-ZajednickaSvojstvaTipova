@@ -59,7 +59,7 @@
             Console.WriteLine(Osoba.ReferenceEquals(osobaA, osobaB));
         }
 
-        // TODO:030 Pokrenuti program bez debuggera (Ctrl+F5) i pogledati ispis
+        // TODO:030 Pokrenuti program i pogledati ispis
         static void Main()
         {
             Util.IspisNaslova("Usporedba referenci na isti objekt");

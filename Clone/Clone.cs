@@ -1,11 +1,11 @@
 ﻿namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
-    // TODO:101 Klasi Osoba iz projekta MetodaEqualsZaReferentiTip navesti da implementira sučelje ICloneable.
+    // TODO:101 Klasi Osoba iz projekta EqualsZaReferentiTip navesti da implementira sučelje ICloneable.
 
     // TODO:102 Implementirati metodu sučelja object ICloneable.Clone() i tipski sigurnu metodu Osoba Clone()
 
 
-    class Clone
+    static class Clone
     {
         // TODO:100 Pokrenuti program i pogledati ispis.
         public static void Jednakost()
