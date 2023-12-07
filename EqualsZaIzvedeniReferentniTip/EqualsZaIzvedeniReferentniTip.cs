@@ -1,7 +1,7 @@
 ﻿namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     // TODO:041 Definirati da klasa Student implementira sučelje IEquatable<Student>
-    class Student : Osoba
+    class Student : Osoba, IEquatable<Student>
     {
         public Student(string ime, int matičniBroj, string smjer, int godina) : base(ime, matičniBroj)
         {
@@ -21,6 +21,19 @@
         public override string ToString()
         {
             return $"{base.ToString()} ({smjer} {godina}.godina)";
+        }
+
+        public override bool Equals(object? obj)
+        {
+            return Equals(obj as Student);
+        }
+
+        public bool Equals(Student? student)
+        {
+            return student != null &&
+            base.Equals(student) &&
+            smjer == student.smjer &&
+            godina == student.godina;
         }
     }
 
@@ -52,7 +65,7 @@
 
         }
 
-        // TODO:040 Pokrenuti program i pogledati ispis.
+        // 040 Pokrenuti program i pogledati ispis.
         static void Main()
         {
             // dva različita studenta
