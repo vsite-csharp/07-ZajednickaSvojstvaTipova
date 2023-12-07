@@ -11,17 +11,43 @@
         public double Realni;
         public double Imaginarni;
 
-        // TODO:011 Nadglasati (override) metodu ToString tako da vraća niz u obliku: "2+3j", "2-j", "0", "j", "-j".
-        
+        // :011 Nadglasati (override) metodu ToString tako da vraća niz u obliku: "2+3j", "2-j", "0", "j", "-j".
+        public override string ToString()
+        {
+            string prazan = string.Empty;
+            if (Realni == 0 && Imaginarni != 0)
+            {
+                if (Imaginarni == 1) return "j";
+                if (Imaginarni == -1) return "-j";
+
+                return Imaginarni.ToString() + "j";
+            }
+            if (Realni != 0 && Imaginarni != 0)
+            {
+                if (Imaginarni == 1) return Realni.ToString()+"+j";
+                if (Imaginarni == -1) return Realni.ToString()+"-j";
+
+                if (Imaginarni > 0) return Realni.ToString() + "+" + Imaginarni.ToString()+"j";
+                if (Imaginarni < 0) return Realni.ToString() + Imaginarni.ToString()+"j";
+            }
+            if (Realni != 0 && Imaginarni == 0)
+            {
+                return Realni.ToString();
+            }
+
+
+            return "0";
+        }
 
     }
 
-    // TODO:010 Pokrenuti program i pogledati ispise instanci strukture KompleksniBroj.
+    // :010 Pokrenuti program i pogledati ispise instanci strukture KompleksniBroj.
+    //Ne ispisuje članove, već puni naziv objekta -> system32.object...
     static class ToString
     {
-        // TODO:012 Pokrenuti program i usporediti ispise s očekivanima.
+        // :012 Pokrenuti program i usporediti ispise s očekivanima.
 
-        // TODO:013 Pokrenuti testove u grupi TestToString i provjeriti prolaze li svi testovi.
+        // :013 Pokrenuti testove u grupi TestToString i provjeriti prolaze li svi testovi.
         static void Main()
         {
             KompleksniBroj kb = new KompleksniBroj(2, 3);
