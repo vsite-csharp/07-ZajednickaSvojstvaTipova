@@ -3,7 +3,7 @@
     public class EqualsZaVrijednosniTip
     {
         // TODO:051 Definirati da struktura Osoba implementira sučelje IEquatable<Osoba>
-        public struct Osoba
+        public struct Osoba : IEquatable<Osoba>
         {
             public Osoba(string ime, int matičniBroj)
             {
@@ -29,6 +29,20 @@
             {
                 ime = novoIme;
             }
+
+            public override bool Equals(object? obj)
+            {
+                if (obj == null)
+                    return false;
+
+                return Equals((Osoba)obj);
+            }
+
+            public bool Equals(Osoba osoba)
+            {
+                return ime == osoba.ime &&
+                       matičniBroj == osoba.matičniBroj;
+            }
         }
 
         public static void UsporedbaOsoba(Osoba osobaA, Osoba osobaB)
@@ -40,7 +54,7 @@
             Console.WriteLine(osobaB.Equals(osobaA));
         }
 
-        // TODO:050 Pokrenuti program i pogledati ispis.
+        // :050 Pokrenuti program i pogledati ispis.
         static void Main()
         {
             // dvije osobe s različitim imenima i MB
