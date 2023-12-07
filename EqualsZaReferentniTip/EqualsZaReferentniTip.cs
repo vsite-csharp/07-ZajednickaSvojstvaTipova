@@ -39,6 +39,16 @@
                    ime == other.ime &&
                    matičniBroj == other.matičniBroj;
         }
+
+        static public bool operator==(Osoba? left, Osoba? right)
+        {
+            return Equals(left, right);
+        }
+
+        static public bool operator !=(Osoba? left, Osoba? right)
+        {
+            return !Equals(left, right);
+        }
     }
 
     static class EqualsZaReferentniTip
