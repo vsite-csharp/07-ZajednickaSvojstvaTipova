@@ -25,7 +25,7 @@
 
 		public override bool Equals(object? obj)
 		{
-            return Equals(obj is Student);
+            return Equals(obj as Student);
 				  
 		}
 
