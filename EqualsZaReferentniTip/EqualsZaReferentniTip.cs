@@ -1,7 +1,7 @@
 ﻿namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     // TODO:031 Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
-    public class Osoba
+    public class Osoba : IEquatable<Osoba>
     {
         public Osoba(string? ime, int matičniBroj)
         {
@@ -26,6 +26,18 @@
         public void PromijeniIme(string novoIme)
         {
             ime = novoIme;
+        }
+
+        public override bool Equals(object? obj)
+        {
+            return Equals(obj as Osoba);
+        }
+
+        public bool Equals(Osoba? other)
+        {
+            return other != null &&
+                   ime == other.ime &&
+                   matičniBroj == other.matičniBroj;
         }
     }
 
