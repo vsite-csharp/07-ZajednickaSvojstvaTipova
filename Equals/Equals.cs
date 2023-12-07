@@ -1,4 +1,6 @@
-﻿namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
+﻿using System;
+
+namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     class MojaKlasa
     {
@@ -16,16 +18,16 @@
             MojaKlasa? mk2 = null;
 
             // TODO:020 Usporediti objekte mk1 i mk2 korištenjem statičke metode MojaKlasa.Equals te ispisati rezultat
-
+            Console.WriteLine(Equals(mk1, mk2));
 
             // TODO:021 Usporediti reference na objekte mk1 i mk2 korištenjem statičke metode MojaKlasa.ReferenceEquals te ispisati rezultat
-
+            Console.WriteLine(ReferenceEquals(mk1, mk2));
 
             // TODO:022 Usporediti objekte mk1 i mk2 pozivom metode mk1.Equals te ispisati rezultat
-
+            Console.WriteLine(mk1.Equals(mk2));
 
             // TODO:023 Usporediti objekte mk1 i mk2 pozivom metode mk2.Equals te ispisati rezultat
-
+            Console.WriteLine(mk2.Equals(mk1));
 
         }
 
