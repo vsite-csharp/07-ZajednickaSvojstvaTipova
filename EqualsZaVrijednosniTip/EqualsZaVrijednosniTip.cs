@@ -3,7 +3,7 @@
     public class EqualsZaVrijednosniTip
     {
         // TODO:051 Definirati da struktura Osoba implementira sučelje IEquatable<Osoba>
-        public struct Osoba
+        public struct Osoba : IEquatable<Osoba>
         {
             public Osoba(string ime, int matičniBroj)
             {
@@ -28,6 +28,17 @@
             public void PromijeniIme(string novoIme)
             {
                 ime = novoIme;
+            }
+
+            public override bool Equals(object? obj)
+            {
+                return Equals((Osoba)obj);
+            }
+
+            public bool Equals(Osoba osoba)
+            {
+                  return ime == osoba.ime &&
+                         matičniBroj == osoba.matičniBroj;
             }
         }
 
