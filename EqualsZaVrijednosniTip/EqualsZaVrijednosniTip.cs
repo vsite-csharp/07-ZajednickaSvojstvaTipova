@@ -3,7 +3,7 @@
     public class EqualsZaVrijednosniTip
     {
         // TODO:051 Definirati da struktura Osoba implementira sučelje IEquatable<Osoba>
-        public struct Osoba
+        public struct Osoba : IEquatable<Osoba>
         {
             public Osoba(string ime, int matičniBroj)
             {
@@ -14,10 +14,10 @@
             private string ime;
             private readonly int matičniBroj;
 
-            // TODO:052 Implementirati metodu Equals(Osoba) iz sučelja IEquatable<Osoba> tako da za osobe s istim matičnim brojem rezultat bude true (bez obzira na ime)
+            // :052 Implementirati metodu Equals(Osoba) iz sučelja IEquatable<Osoba> tako da za osobe s istim matičnim brojem rezultat bude true (bez obzira na ime)
 
 
-            // TODO:053 Nadglasati (override) metodu Equals(object) tako da poziva Equals(Osoba)
+            // :053 Nadglasati (override) metodu Equals(object) tako da poziva Equals(Osoba)
 
 
             public override string ToString()
@@ -28,6 +28,19 @@
             public void PromijeniIme(string novoIme)
             {
                 ime = novoIme;
+            }
+
+            public override bool Equals(object? obj)
+            {
+                if(obj == null)
+                    return false;
+                return Equals((Osoba)obj);
+            }
+
+            public bool Equals(Osoba osoba)
+            {
+                return ime == osoba.ime &&
+                        matičniBroj == osoba.matičniBroj;
             }
         }
 
