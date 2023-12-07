@@ -1,4 +1,6 @@
-﻿namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
+﻿using System.Security.Cryptography.X509Certificates;
+
+namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     struct KompleksniBroj
     {
@@ -11,8 +13,18 @@
         public double Realni;
         public double Imaginarni;
 
-        // TODO:011 Nadglasati (override) metodu ToString tako da vraća niz u obliku: "2+3j", "2-j", "0", "j", "-j".
+        // 011 Nadglasati (override) metodu ToString tako da vraća niz u obliku: "2+3j", "2-j", "0", "j", "-j".
         
+        public override string ToString() {
+
+            return $"{Realni}+{Imaginarni}+j";
+        }
+
+        private string ImaginaryPart()
+        {
+            string str = "";
+            return str;
+        }
 
     }
 
