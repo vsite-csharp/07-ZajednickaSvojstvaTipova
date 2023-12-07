@@ -1,4 +1,6 @@
-﻿namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
+﻿using System.Threading.Channels;
+
+namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     struct KompleksniBroj
     {
@@ -11,15 +13,23 @@
         public double Realni;
         public double Imaginarni;
 
-        // TODO:011 Nadglasati (override) metodu ToString tako da vraća niz u obliku: "2+3j", "2-j", "0", "j", "-j".
-        
+        // 011 Nadglasati (override) metodu ToString tako da vraća niz u obliku: "2+3j", "2-j", "0", "j", "-j".
+        public override string ToString()
+        {
+            return $"{Realni}+{Imaginarni}j";
+        }
+
+        //private string ImaginaryPart()
+        //{
+
+        //}
 
     }
 
-    // TODO:010 Pokrenuti program i pogledati ispise instanci strukture KompleksniBroj.
+    // 010 Pokrenuti program i pogledati ispise instanci strukture KompleksniBroj.
     static class ToString
     {
-        // TODO:012 Pokrenuti program i usporediti ispise s očekivanima.
+        // 012 Pokrenuti program i usporediti ispise s očekivanima.
 
         // TODO:013 Pokrenuti testove u grupi TestToString i provjeriti prolaze li svi testovi.
         static void Main()
