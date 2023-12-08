@@ -14,14 +14,24 @@
         // :011 Nadglasati (override) metodu ToString tako da vraća niz u obliku: "2+3j", "2-j", "0", "j", "-j".
         public override string ToString()
         {
-            if(Imaginarni > 0)
-                return $"{Realni}+{Imaginarni}j";
-            else
-                return $"{Realni}-{Imaginarni}j";
+            return ImagnaryPart();                                            
         }
         private string ImagnaryPart()
         {
-            throw new NotImplementedException();
+            if (Realni == 0 && Imaginarni == -1)
+                return "-j";
+            else if (Realni == 0 && Realni == 1)
+                return "j";
+            else if (Imaginarni == 0 && Realni == 0)
+                return "0";
+            else if (Imaginarni == 0)
+                return $"{Realni}";
+            else if (Realni == 0)
+                return $"{Imaginarni}j";
+            else if (Imaginarni < 0)
+                return $"{Realni}{Imaginarni}j";
+            else
+                return $"{Realni}+{Imaginarni}j"; 
         }
     }
 
