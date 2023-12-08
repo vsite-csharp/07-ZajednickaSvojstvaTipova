@@ -14,12 +14,55 @@
         // :011 Nadglasati (override) metodu ToString tako da vraća niz u obliku: "2+3j", "2-j", "0", "j", "-j".
         public override string? ToString()
         {
-            return $"{Realni}+{Imaginarni}j";
+            if (Realni == 0 && Imaginarni == 0)
+                return "0";
+
+            return $"{RealPart()}{Sign()}{ImaginaryPart()}";
+        }
+
+        private string Sign()
+        {
+            if (Imaginarni < 0)
+                return "-";
+
+            else if (Realni == 0 && Imaginarni > 0)
+                return "";
+
+            else if (Realni > 0 && Imaginarni > 0)
+                return "+";
+
+            return "";
+
+        }
+
+        private string RealPart()
+        {
+            if (Realni < 0)
+                return $"{Realni}";
+
+            else if (Realni == 0)
+                return "";
+
+            else
+                return $"{Realni}";
         }
 
         private string ImaginaryPart()
         {
-            throw new NotImplementedException();
+            if (Imaginarni == -1)
+                return "j";
+
+            if (Imaginarni < 0)
+                return $"{Imaginarni}j".Remove(0,1);
+
+            else if (Imaginarni == 0)
+                return "";
+
+            else if (Imaginarni == 1)
+                return "j";
+
+            else
+                return $"{Imaginarni}j";
         }
 
     }
