@@ -20,8 +20,12 @@
         {
             if (Realni == 0 && Imaginarni == -1)
                 return "-j";
-            else if (Realni == 0 && Realni == 1)
+            else if (Realni == 0 && Imaginarni == 1)
                 return "j";
+            else if(Imaginarni == 1)
+                return $"{Realni}+j";
+            else if (Imaginarni == -1)
+                return $"{Realni}-j";
             else if (Imaginarni == 0 && Realni == 0)
                 return "0";
             else if (Imaginarni == 0)
