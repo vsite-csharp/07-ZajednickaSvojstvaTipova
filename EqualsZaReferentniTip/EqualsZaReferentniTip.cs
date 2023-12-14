@@ -44,7 +44,12 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 			
 		}
 
-        public static bool operator==(Osoba? left, Osoba? right)
+		public override int GetHashCode()
+		{
+            return matičniBroj.GetHashCode(); // HashCode.Combine(matičniBroj);
+		}
+
+		public static bool operator==(Osoba? left, Osoba? right)
         {
             return Equals(left, right);
         }
