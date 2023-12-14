@@ -1,4 +1,6 @@
-﻿namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
+﻿using System.Runtime.CompilerServices;
+
+namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     public class EqualsZaVrijednosniTip
     {
@@ -41,8 +43,17 @@
             public bool Equals(Osoba other)
             {
                 if (other.matičniBroj == this.matičniBroj) return true;
-                if (other.Equals(this)) return true;
                 return false;
+            }
+
+            public static bool operator ==(Osoba? left, Osoba? right)
+            {
+                return Equals(left, right);
+            }
+            public static bool operator !=(Osoba? left, Osoba? right)
+            {
+
+                return !Equals(left, right);
             }
         }
 
