@@ -37,6 +37,12 @@
         {
             return other != null && ime == other.ime && matičniBroj == other.matičniBroj;
         }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(matičniBroj);
+        }
+
         public static bool operator==(Osoba? left, Osoba? right)
         {
             return Equals(left,right);
@@ -45,6 +51,7 @@
         {
             return !(left== right);
         }
+
     }
 
     static class EqualsZaReferentniTip
