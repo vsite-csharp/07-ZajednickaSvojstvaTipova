@@ -7,6 +7,7 @@
         {
             this.ime = ime;
             this.matičniBroj = matičniBroj;
+
         }
 
         private string? ime;               // član referentnog tipa
@@ -17,7 +18,10 @@
 
         // :033 Nadglasati (override) metodu Equals(object) tako da poziva Equals(Osoba)
 
-
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(ime, matičniBroj);
+        }
         public override string ToString()
         {
             return $"'{ime}, {matičniBroj}'";
