@@ -1,7 +1,7 @@
 ﻿namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     // :031 Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
-    public class Osoba : IEquatable<Osoba>
+    public class Osoba : IEquatable<Osoba>, ICloneable
     {
         public Osoba(string? ime, int matičniBroj)
         {
@@ -18,6 +18,10 @@
 
         // :033 Nadglasati (override) metodu Equals(object) tako da poziva Equals(Osoba)
 
+        public object Clone()
+        {
+            return new Osoba(this.ime, this.matičniBroj);
+        }
         public override int GetHashCode()
         {
             return HashCode.Combine(ime, matičniBroj);
@@ -41,6 +45,7 @@
         {
             return other != null && ime == other.ime && matičniBroj == other.matičniBroj;
         }
+
         public static bool operator ==(Osoba? left, Osoba? right)
         {
             return Equals(left, right);
