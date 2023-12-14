@@ -38,10 +38,11 @@
                 return Equals((Osoba)(obj));
             }
 
-            public bool Equals(Osoba osoba)
+            public bool Equals(Osoba other)
             {
-                return ime == osoba.ime &&
-                      matičniBroj == osoba.matičniBroj;
+                if (other.matičniBroj == this.matičniBroj) return true;
+                if (other.Equals(this)) return true;
+                return false;
             }
         }
 

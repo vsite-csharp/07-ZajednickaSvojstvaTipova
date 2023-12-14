@@ -10,7 +10,7 @@
             Console.WriteLine(string.Format("{0} != {1}: {2}", osobaA, osobaB, osobaA != osobaB));
         }
 
-        // TODO:060 Pokrenuti program i pogledati ispise.
+        // :060 Pokrenuti program i pogledati ispise.
         static void Main()
         {
             Osoba? osobaA = new Osoba("Janko", 1);
