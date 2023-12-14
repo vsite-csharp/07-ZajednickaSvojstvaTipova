@@ -17,15 +17,50 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         
         public override string ToString() {
 
-            return $"{Realni}+{Imaginarni}+j";
+            return $"{RealPart()}{plus()}{ImaginaryPart()}";
         }
 
+        private string plus()
+        {
+            string str = "";
+            if(Realni!=0 && Imaginarni>0)
+            {
+                str = "+";
+            }
+            return str;
+        }
         private string ImaginaryPart()
         {
             string str = "";
-            if (Imaginarni != 0)
+            switch (Imaginarni)
             {
-                str=Imaginarni.ToString()+"j";
+                case 0:
+                    return str;
+                case 1:
+                    return "j";
+                case -1:
+                    return "-j";
+                case > 1:
+                    str = Imaginarni.ToString() + "j";
+                    return str;
+                case < -1:
+                    str = Imaginarni.ToString() + "j";
+                    return str;
+
+                default: return str;
+
+            }
+        }
+        private string RealPart()
+        {
+            string str = "";
+            if (Realni != 0)
+            {
+                str = Realni.ToString();
+            }
+            else if(Imaginarni == 0)
+            {
+                str = "0";
             }
             return str;
         }
