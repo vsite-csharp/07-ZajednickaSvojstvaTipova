@@ -1,4 +1,6 @@
-﻿namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
+﻿using System.Data.Common;
+
+namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     // TODO:031 Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
     public class Osoba:IEquatable<Osoba>
@@ -47,10 +49,13 @@
             return Equals(left, right);
         }
 
+       
+
         public static bool operator!=(Osoba? left, Osoba? right)
         {
             return !(left == right);
         }
+
 	}
 
     static class EqualsZaReferentniTip
