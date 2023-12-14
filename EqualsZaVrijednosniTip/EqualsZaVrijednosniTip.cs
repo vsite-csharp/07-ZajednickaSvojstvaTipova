@@ -1,4 +1,6 @@
-﻿namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
+﻿using System.Numerics;
+
+namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     public class EqualsZaVrijednosniTip
     {
@@ -53,6 +55,8 @@
             {
                 return !(left == right);
             }
+
+            
         }
 
         public static void UsporedbaOsoba(Osoba osobaA, Osoba osobaB)
