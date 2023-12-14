@@ -1,7 +1,7 @@
 ﻿namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
-    // TODO:031 Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
-    public class Osoba
+    // DID_IT:031 Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
+    public class Osoba : IEquatable<Osoba?>
     {
         public Osoba(string? ime, int matičniBroj)
         {
@@ -12,10 +12,10 @@
         private string? ime;               // član referentnog tipa
         private readonly int matičniBroj;  // član vrijednosnog tipa
 
-        // TODO:032 Implementirati metodu Equals(Osoba) iz sučelja IEquatable<Osoba> tako da za osobe s istim imenom i istim matičnim brojem rezultat bude true
+        // DID_IT:032 Implementirati metodu Equals(Osoba) iz sučelja IEquatable<Osoba> tako da za osobe s istim imenom i istim matičnim brojem rezultat bude true
 
 
-        // TODO:033 Nadglasati (override) metodu Equals(object) tako da poziva Equals(Osoba)
+        // DID_IT:033 Nadglasati (override) metodu Equals(object) tako da poziva Equals(Osoba)
 
 
         public override string ToString()
@@ -26,6 +26,34 @@
         public void PromijeniIme(string novoIme)
         {
             ime = novoIme;
+        }
+
+        public override bool Equals(object? obj)
+        {
+            return Equals(obj as Osoba);
+        }
+
+        public bool Equals(Osoba? other)
+        {
+            return other is not null &&
+                   ime == other.ime &&
+                   matičniBroj == other.matičniBroj;
+        }
+
+        public override int GetHashCode()
+        {
+            return matičniBroj.GetHashCode();
+            //return HashCode.Combine(matičniBroj);
+        }
+
+        public static bool operator ==(Osoba? left, Osoba? right)
+        {
+            return EqualityComparer<Osoba>.Default.Equals(left, right);
+        }
+
+        public static bool operator !=(Osoba? left, Osoba? right)
+        {
+            return !(left == right);
         }
     }
 
@@ -59,7 +87,7 @@
             Console.WriteLine(Osoba.ReferenceEquals(osobaA, osobaB));
         }
 
-        // TODO:030 Pokrenuti program i pogledati ispis
+        // DID_IT:030 Pokrenuti program i pogledati ispis
         static void Main()
         {
             Util.IspisNaslova("Usporedba referenci na isti objekt");

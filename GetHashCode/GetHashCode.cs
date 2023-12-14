@@ -1,8 +1,8 @@
 ﻿namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
-    // TODO:090 Pokrenuti program i provjeriti ispis.
+    // DID_IT:090 Pokrenuti program i provjeriti ispis.
 
-    // TODO:091 Implementirati metodu GetHashCode u klasi Osoba iz projekta EqualsZaReferentiTip tako da se metoda Main može izvesti bez problema
+    // DID_IT:091 Implementirati metodu GetHashCode u klasi Osoba iz projekta EqualsZaReferentiTip tako da se metoda Main može izvesti bez problema
 
     static class GetHashCode
     {
