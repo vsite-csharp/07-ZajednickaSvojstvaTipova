@@ -1,6 +1,6 @@
 ﻿namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
-    // TODO:061 U klasi Osoba iz projekta EqualsZaReferentiTip definirati operatore == i != tako da donji primjeri daju očekivane rezultate.
+    // DID_IT:061 U klasi Osoba iz projekta EqualsZaReferentiTip definirati operatore == i != tako da donji primjeri daju očekivane rezultate.
 
     static class JednakostZaReferentniTip
     {
@@ -10,7 +10,7 @@
             Console.WriteLine(string.Format("{0} != {1}: {2}", osobaA, osobaB, osobaA != osobaB));
         }
 
-        // TODO:060 Pokrenuti program i pogledati ispise.
+        // DID_IT:060 Pokrenuti program i pogledati ispise.
         static void Main()
         {
             Osoba? osobaA = new Osoba("Janko", 1);

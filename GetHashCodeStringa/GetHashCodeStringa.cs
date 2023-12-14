@@ -4,7 +4,7 @@
     {
         static void Main()
         {
-            // TODO:080 Pokrenuti program i usporediti ispise. Koja dva znakovna niza daju najbliže brojeve?
+            // DID_IT:080 Pokrenuti program i usporediti ispise. Koja dva znakovna niza daju najbliže brojeve?
 
             Console.WriteLine($"cat.GetHashCode() = {"cat".GetHashCode()}");
             Console.WriteLine($"cta.GetHashCode() = {"cta".GetHashCode()}");
