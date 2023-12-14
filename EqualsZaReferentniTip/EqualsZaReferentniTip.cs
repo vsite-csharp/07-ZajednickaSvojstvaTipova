@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     // 031 Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
-    public class Osoba:IEquatable<Osoba>
+    public class Osoba:IEquatable<Osoba>, ICloneable
     {
         public Osoba(string? ime, int matičniBroj)
         {
@@ -56,6 +56,11 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 		{
             return matičniBroj.GetHashCode(); //HashCode.Combine(matičniBroj);
         }
+
+		public object Clone()
+		{
+            return new Osoba(ime, matičniBroj);
+		}
 	}
 
     static class EqualsZaReferentniTip
