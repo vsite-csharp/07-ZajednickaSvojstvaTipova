@@ -1,7 +1,7 @@
 ﻿namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
-    // TODO:031 Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
-    public class Osoba
+    // 031 Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
+    public class Osoba : IEquatable<Osoba>, ICloneable
     {
         public Osoba(string? ime, int matičniBroj)
         {
@@ -12,10 +12,10 @@
         private string? ime;               // član referentnog tipa
         private readonly int matičniBroj;  // član vrijednosnog tipa
 
-        // TODO:032 Implementirati metodu Equals(Osoba) iz sučelja IEquatable<Osoba> tako da za osobe s istim imenom i istim matičnim brojem rezultat bude true
+        // 032 Implementirati metodu Equals(Osoba) iz sučelja IEquatable<Osoba> tako da za osobe s istim imenom i istim matičnim brojem rezultat bude true
 
 
-        // TODO:033 Nadglasati (override) metodu Equals(object) tako da poziva Equals(Osoba)
+        // 033 Nadglasati (override) metodu Equals(object) tako da poziva Equals(Osoba)
 
 
         public override string ToString()
@@ -44,6 +44,10 @@
         public override int GetHashCode()
         {
             return matičniBroj.GetHashCode();
+        }
+        public object Clone()
+        {
+            return new Osoba(ime, matičniBroj);
         }
 
         static class EqualsZaReferentniTip
@@ -76,7 +80,7 @@
             Console.WriteLine(Osoba.ReferenceEquals(osobaA, osobaB));
         }
 
-        // TODO:030 Pokrenuti program i pogledati ispis
+        // 030 Pokrenuti program i pogledati ispis
         static void Main()
         {
             Util.IspisNaslova("Usporedba referenci na isti objekt");
