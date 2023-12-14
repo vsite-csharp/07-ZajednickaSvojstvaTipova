@@ -27,7 +27,7 @@
     {
         // :012 Pokrenuti program i usporediti ispise s očekivanima.
 
-        // TODO:013 Pokrenuti testove u grupi TestToString i provjeriti prolaze li svi testovi.
+        // :013 Pokrenuti testove u grupi TestToString i provjeriti prolaze li svi testovi.
         static void Main()
         {
             KompleksniBroj kb = new KompleksniBroj(2, 3);
