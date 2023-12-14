@@ -15,17 +15,10 @@
             private readonly int matičniBroj;
 
             // :052 Implementirati metodu Equals(Osoba) iz sučelja IEquatable<Osoba> tako da za osobe s istim matičnim brojem rezultat bude true (bez obzira na ime)
-            public bool Equals(Osoba other)
-            {
-                if(other.Equals(this)) return true;
-                return false;
-            }
 
-            // TODO:053 Nadglasati (override) metodu Equals(object) tako da poziva Equals(Osoba)
-            //public override bool Equals(Osoba other)
-            //{
-            //    throw new NotImplementedException();
-            //}
+
+            // :053 Nadglasati (override) metodu Equals(object) tako da poziva Equals(Osoba)
+
 
             public override string ToString()
             {
@@ -37,7 +30,19 @@
                 ime = novoIme;
             }
 
+            public override bool Equals(object? obj)
+            {
 
+                if (obj == null) return false;
+
+                return Equals((Osoba)(obj));
+            }
+
+            public bool Equals(Osoba osoba)
+            {
+                return ime == osoba.ime &&
+                      matičniBroj == osoba.matičniBroj;
+            }
         }
 
         public static void UsporedbaOsoba(Osoba osobaA, Osoba osobaB)
