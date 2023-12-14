@@ -23,6 +23,10 @@ namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
         private string ImaginaryPart()
         {
             string str = "";
+            if (Imaginarni != 0)
+            {
+                str=Imaginarni.ToString()+"j";
+            }
             return str;
         }
 
