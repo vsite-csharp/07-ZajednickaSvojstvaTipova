@@ -1,4 +1,6 @@
-﻿namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
+﻿using System.Data.Common;
+
+namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     // 031 Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
     public class Osoba : IEquatable<Osoba>

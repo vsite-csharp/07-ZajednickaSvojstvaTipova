@@ -40,6 +40,8 @@
             {
                 return matičniBroj == other.matičniBroj;
             }
+            public static bool operator==(Osoba lhs, Osoba rhs) => lhs.Equals(rhs);
+            public static bool operator!=(Osoba lhs,Osoba rhs) {  return !(lhs==rhs); }
         }
 
         public static void UsporedbaOsoba(Osoba osobaA, Osoba osobaB)
