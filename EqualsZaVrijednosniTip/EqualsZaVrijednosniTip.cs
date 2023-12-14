@@ -1,4 +1,6 @@
-﻿namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
+﻿using System.Data.Common;
+
+namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     public class EqualsZaVrijednosniTip
     {
@@ -39,10 +41,18 @@
 
             public bool Equals(Osoba osoba)
             {
-                return ime == osoba.ime &&
-                       matičniBroj == osoba.matičniBroj;
+                return matičniBroj == osoba.matičniBroj;
             }
-        }
+			public static bool operator ==(Osoba left, Osoba right)
+            {
+                return left.Equals(right);
+            }
+            public static bool operator !=(Osoba left, Osoba right)
+            {
+                return !(left == right);
+            }
+
+		}
 
         public static void UsporedbaOsoba(Osoba osobaA, Osoba osobaB)
         {
