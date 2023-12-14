@@ -1,7 +1,7 @@
 ﻿namespace Vsite.CSharp.ZajedničkaSvojstvaTipova
 {
     // TODO:031 Definirati da klasa Osoba implementira sučelje IEquatable<Osoba>
-    public class Osoba
+    public class Osoba : IEquatable<Osoba>, ICloneable
     {
         public Osoba(string? ime, int matičniBroj)
         {
@@ -26,6 +26,16 @@
         public void PromijeniIme(string novoIme)
         {
             ime = novoIme;
+        }
+
+        public object Clone()
+        {
+            return new Osoba(ime, matičniBroj);
+        }
+
+        public bool Equals(Osoba? other)
+        {
+            throw new NotImplementedException();
         }
     }
 
