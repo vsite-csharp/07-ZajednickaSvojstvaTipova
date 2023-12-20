@@ -42,6 +42,14 @@
                 return ime == osoba.ime &&
                        matičniBroj == osoba.matičniBroj;
             }
+            public static bool operator ==(Osoba left, Osoba right)
+            {
+                return left.Equals(right);
+            }
+            public static bool operator !=(Osoba left, Osoba right)
+            {
+                return !(left == right);
+            }
         }
 
         public static void UsporedbaOsoba(Osoba osobaA, Osoba osobaB)
@@ -53,7 +61,7 @@
             Console.WriteLine(osobaB.Equals(osobaA));
         }
 
-        // TODO:050 Pokrenuti program i pogledati ispis.
+        // T050 Pokrenuti program i pogledati ispis.
         static void Main()
         {
             // dvije osobe s različitim imenima i MB
