@@ -49,6 +49,11 @@
         {
             return !Equals(left, right);
         }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(matičniBroj);
+        }
     }
 
     static class EqualsZaReferentniTip
